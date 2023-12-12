@@ -1,0 +1,2709 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Práctica #3 Química Computacional &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Práctica#3';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Notebooks with MyST Markdown" href="markdown-notebooks.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="markdown.html">Markdown Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Content with notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Práctica #3 Química Computacional</strong></a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FPráctica#3.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Práctica#3.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Práctica #3 Química Computacional</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hecho-por-elizabeth-granda-1000900741"><em><strong>Hecho por Elizabeth Granda, 1000900741</strong></em></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solucion"><strong>Solución</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#punto-1"><strong>Punto #1:</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#item-1"><strong>Item #1</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#item-2"><strong>Item #2</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#item-3"><strong>Item #3</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#item-4"><strong>Item #4</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#item-5"><strong>Item #5</strong></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#punto-2"><strong>Punto #2</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><strong>Item #1</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><strong>Item #2</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3"><strong>Item #3</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4"><strong>Item #4</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5"><strong>Item #5</strong></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#punto-3"><strong>Punto #3</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6"><strong>Item #1</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7"><strong>Item #2</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id8"><strong>Item #3</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id9"><strong>Item #4</strong></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#punto-4"><strong>Punto #4</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id10"><strong>Item #1</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id11"><strong>Item #2</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="practica-3-quimica-computacional">
+<h1><strong>Práctica #3 Química Computacional</strong><a class="headerlink" href="#practica-3-quimica-computacional" title="Permalink to this heading">#</a></h1>
+<section id="hecho-por-elizabeth-granda-1000900741">
+<h2><em><strong>Hecho por Elizabeth Granda, 1000900741</strong></em><a class="headerlink" href="#hecho-por-elizabeth-granda-1000900741" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<ol class="arabic simple">
+<li><p>Descargue el archivo .CIF. Visualice la estructura cristalina usando ASE para dar respuesta a los siguientes enunciados. Para realizar las modificaciones usar ASE, y para visualizar, si lo desea, puede usar ASE ó VESTA. Una vez realizada la modificación, replique la celda unitaria como lo crea más conveniente:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Cree una vacancia por eliminación de un catión. Explique qué implicaciones tendría esto tanto en la geometría (y por tanto simetría) como la estructura electrónica del sólido.</p></li>
+<li><p>Cree un defecto de Frenkel. Explique.</p></li>
+<li><p>Construya un defecto de Schottky. Explique.</p></li>
+<li><p>Agregue una impureza intersticial, de un átomo foráneo. Explique.</p></li>
+<li><p>Muestre una impureza por sustitución isomórfica de un átomo por otro diferente. Explique.</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p>Utilice la estructura del numeral 1) para el desarrollo de los siguientes enunciados. En los puntos donde corresponda, muestre las líneas de código utilizadas. Para los puntos a) – c), dirijase a Materials Project para visualizar la información.</p></li>
+</ol>
+<ul class="simple">
+<li><p>Ubique el diagrama de fases del sistema cristalino e interprételo en detalle. Indique cuál(s) es(son) la(s) especie(s) más estables y si el sistema que usted tiene es o no estable.</p></li>
+<li><p>Ubique el gráfico de energía de formación. Interprételo.</p></li>
+<li><p>Ubique la estructura electrónica, particularmente la estructura de bandas y la densidad de estados. Interprete la gráfica de acuerdo con lo visto en clase.</p></li>
+<li><p>Usando Jupyter-lab, cargue el .CIF, visualice (print) la información cristalográfica y observe la estructura usando la herramienta Crystal Toolkit. Determine los estados de oxidación de cada átomo en la estructura cristalina, usando la metodología vista en clase. Visualice sus datos (print). Muestre las líneas de código utilizadas.</p></li>
+<li><p>Visualice (print) el grupo espacial, volumen y simetría. Muestre las líneas de código usadas.</p></li>
+</ul>
+<p><em>Nota 1: Adjuntar archivo .ipynb con el desarrollo de su código para el numeral 2.</em></p>
+<ol class="arabic simple" start="3">
+<li><p>Cargue archivo con su estructura directamente a Jupyter-lab desde Pymatgen. No use el .CIF descargado en los puntos anteriores. Use este sistema para brindar respuesta a lo solicitado. En los puntos donde corresponda, muestre las líneas de código utilizadas.</p></li>
+</ol>
+<ul class="simple">
+<li><p>Seleccione un átomo de su elección para moverlo 0.1 Å en la dirección que desee. Indique qué tipo de simetría espacial tendría este sistema, además de la nueva densidad y volumen.</p></li>
+<li><p>Seleccione un átomo diferente y sustitúyalo por otro tipo de átomo de su preferencia. Indique el tipo de simetría resultante, junto con la nueva densidad y volumen.</p></li>
+<li><p>Elimine un átomo arbitrario y muestre la simetría final, además de la nueva densidad y volumen.</p></li>
+<li><p>Relice un tabla que resuma los sistemas obtenidos en los enunciados en los numerales 2e y 3. Interprete los resultados.</p></li>
+</ul>
+<p><em>Nota 2: Adjuntar archivo .ipynb con el desarrollo de su código para el numeral 3.</em></p>
+<ol class="arabic simple" start="4">
+<li><p>Utilice su estructura cristalina del numeral 3), para usarla en pymatgen con criterios de búsqueda de propiedades. En los puntos donde corresponda, muestre las líneas de código utilizadas.</p></li>
+</ol>
+<ul class="simple">
+<li><p>Ubique en la Tabla Periódica de los Elementos, los metales vecinos al metal de transición de su estructura y elija uno de ellos. Utilice como criterio de búsqueda un band gap entre 1.1 y 3.2 eV ó un band gap entre 0.4 y 1.0 eV (use solo un rango) para establecer la cantidad de materiales que cumplan con ello, y que además se filtre la búsqueda por tipo de estructura (chemsys). Busque materiales con similitud composicional a su material inicial. Por ejemplo, si se tiene un óxido de hierro como punto de partida (Fe3O4), buscar óxidos de Mn ó Ru ó Co, ó combinaciones entre estos en caso de existir, por ejemplo un óxido doble de Mn,Co. Cree un DataFrame con los resultados obtenidos. Aclaración: Realice la búsqueda tanto con Pymatgen como con Matminer. Contraste los resultados obtenidos respecto a cantidad y tipo de datos generados, elija solo un DataFrame. Explique su
+elección. El Dataset usado en Matminer fue: ______________________________.</p></li>
+<li><p>Use el DataFrame seleccionado y elija dos estructuras. Compare estas dos nuevas estructuras con su estructura inicial del punto 1). Contraste sus simetrías, geometría, diagramas de fase, estabilidad y configuración electrónica (band gap, densidad de estados – estructura de bandas), en el marco de la aplicación que usted y/o sus compañeros expusieron. En otras palabras, qué comportamiento tendrían estos dos nuevos materiales respecto al material inicial.</p></li>
+</ul>
+<p><em>Nota 3: Adjuntar archivo .ipynb con el desarrollo de su código para el numeral 4.</em></p>
+</section>
+<hr class="docutils" />
+<section id="solucion">
+<h2><strong>Solución</strong><a class="headerlink" href="#solucion" title="Permalink to this heading">#</a></h2>
+<section id="punto-1">
+<h3><strong>Punto #1:</strong><a class="headerlink" href="#punto-1" title="Permalink to this heading">#</a></h3>
+<section id="item-1">
+<h4><strong>Item #1</strong><a class="headerlink" href="#item-1" title="Permalink to this heading">#</a></h4>
+<p>Cree una vacancia por eliminación de un catión. Explique qué implicaciones tendría esto tanto en la geometría (y por tanto simetría) como la estructura electrónica del sólido.</p>
+<p>En esta práctica #3 que corresponde a la práctica de sólidos, se fue dada una Perovskita a cada estudiante y se mencionará en este primer punto la correspondiente a mi persona para que se siga usando en los siguientes. Esta es <span class="math notranslate nohighlight">\(CaZrO_{3}\)</span>.</p>
+<p>Para realizar una vacancia por eliminación de un catión, lo que se hará primero será observar la celda unitaria de esta perovskita de modo que se pueda observar qué elementos están en esta y se puedan identificar los cationes y los aniones. Para esto se hará uso de la libería <strong>ASE</strong> dado que permite leer archivos <code class="docutils literal notranslate"><span class="pre">.cif</span></code> más fácilmente y la visualización es interactiva. Para el desarrollo de toda la práctica tendremos que usar ciertas librerías que se importarán en la primera celda de código por cuestiones de practicidad y buena programación, esto es:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pymatgen</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">pymatgen.core</span> <span class="kn">import</span> <span class="n">Structure</span><span class="p">,</span> <span class="n">Lattice</span>
+<span class="kn">import</span> <span class="nn">crystal_toolkit</span>
+<span class="kn">from</span> <span class="nn">pymatgen.ext.matproj</span> <span class="kn">import</span> <span class="n">MPRester</span>
+<span class="kn">from</span> <span class="nn">pymatgen.transformations.standard_transformations</span> <span class="kn">import</span> <span class="n">AutoOxiStateDecorationTransformation</span>
+<span class="kn">from</span> <span class="nn">matminer.datasets</span> <span class="kn">import</span> <span class="n">load_dataset</span>
+<span class="kn">from</span> <span class="nn">pymatgen.io.cif</span> <span class="kn">import</span> <span class="n">CifParser</span>
+<span class="kn">from</span> <span class="nn">ase.io</span> <span class="kn">import</span> <span class="n">read</span>
+<span class="kn">from</span> <span class="nn">ase.visualize</span> <span class="kn">import</span> <span class="n">view</span>
+<span class="kn">from</span> <span class="nn">ase.spacegroup</span> <span class="kn">import</span> <span class="n">Spacegroup</span>
+<span class="kn">from</span> <span class="nn">pymatgen.symmetry.analyzer</span> <span class="kn">import</span> <span class="n">SpacegroupAnalyzer</span>
+<span class="kn">import</span> <span class="nn">matminer</span>
+<span class="kn">from</span> <span class="nn">matminer.datasets</span> <span class="kn">import</span> <span class="n">get_available_datasets</span>
+<span class="kn">from</span> <span class="nn">matminer.datasets</span> <span class="kn">import</span> <span class="n">load_dataset</span> <span class="c1">#cargar libreria con la propiedad que quiera analizar</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">pymatgen</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">pymatgen.core</span> <span class="kn">import</span> <span class="n">Structure</span><span class="p">,</span> <span class="n">Lattice</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;pymatgen&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Visualizacion</span>
+<span class="n">material</span> <span class="o">=</span> <span class="n">read</span><span class="p">(</span><span class="s2">&quot;CaZrO3.cif&quot;</span><span class="p">)</span>
+<span class="n">view</span><span class="p">(</span><span class="n">material</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Popen: returncode: None args: [&#39;/home/eligran12/anaconda3/envs/crystals/bin...&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Esta imagen es la celda unitaria. Los elementos que se tienen allí son Circonio (Zr, esfera azul claro), Calcio (Ca, esfera verde) y Oxígeno (O, esfera roja). Para saber quiénes son los aniones y los cationes se puede hacer uso de la herramienta Materials Project que  permitirá ver las cargas del sistema.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpr</span> <span class="o">=</span> <span class="n">MPRester</span><span class="p">(</span><span class="s2">&quot;YVb1EJfpW6q8GgufwhezGRB7YsGcbEXS&quot;</span><span class="p">)</span>
+<span class="n">complete_material</span> <span class="o">=</span> <span class="n">mpr</span><span class="o">.</span><span class="n">get_structure_by_material_id</span><span class="p">(</span><span class="s2">&quot;mp-4571&quot;</span><span class="p">)</span>
+
+<span class="c1">#estados de oxidacion</span>
+<span class="n">cargas</span> <span class="o">=</span> <span class="n">AutoOxiStateDecorationTransformation</span><span class="p">()</span>
+<span class="n">carga_mate</span> <span class="o">=</span> <span class="n">cargas</span><span class="o">.</span><span class="n">apply_transformation</span><span class="p">(</span><span class="n">complete_material</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">carga_mate</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/eligran12/anaconda3/envs/crystals/lib/python3.11/site-packages/mp_api/client/mprester.py:193: UserWarning: mpcontribs-client not installed. Install the package to query MPContribs data, or construct pourbaix diagrams: &#39;pip install mpcontribs-client&#39;
+  warnings.warn(
+Retrieving MaterialsDoc documents: 100%|████████████████████████████████████████████████| 1/1 [00:00&lt;00:00, 2437.13it/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Full Formula (Ca4 Zr4 O12)
+Reduced Formula: CaZrO3
+abc   :   5.585006   5.778097   8.017380
+angles:  90.000000  90.000000  90.000000
+pbc   :       True       True       True
+Sites (20)
+  #  SP            a         b         c    magmom
+---  ----  ---------  --------  --------  --------
+  0  Ca2+   0.013544  0.948042  0.25            -0
+  1  Ca2+   0.513544  0.551958  0.75            -0
+  2  Ca2+   0.486456  0.448042  0.25            -0
+  3  Ca2+   0.986456  0.051958  0.75            -0
+  4  Zr4+  -0         0.5       0               -0
+  5  Zr4+   0.5       0         0               -0
+  6  Zr4+   0.5       0         0.5             -0
+  7  Zr4+  -0         0.5       0.5             -0
+  8  O2-    0.302375  0.700308  0.443416         0
+  9  O2-    0.802375  0.799692  0.556584         0
+ 10  O2-    0.197625  0.200308  0.056584         0
+ 11  O2-    0.697625  0.299692  0.943416         0
+ 12  O2-    0.697625  0.299692  0.556584         0
+ 13  O2-    0.197625  0.200308  0.443416         0
+ 14  O2-    0.802375  0.799692  0.943416         0
+ 15  O2-    0.302375  0.700308  0.056584         0
+ 16  O2-    0.606846  0.041559  0.25             0
+ 17  O2-    0.106846  0.458441  0.75             0
+ 18  O2-    0.893154  0.541559  0.25             0
+ 19  O2-    0.393154  0.958441  0.75             0
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Como se puede ver, el calcio y el circonio son cationes y el único anión es el oxígeno. El catión que se eliminará entoces será <strong>un átomo de Calcio</strong>, cargado con <span class="math notranslate nohighlight">\(2^{+}\)</span>. Para ver cómo cambia la geometría del sólido, se comparará la visual en el eje x del material completo y la visual en el eje x después de la eliminación del átomo de Ca. Observemos cómo queda la geometría del sistema cuando hacemos esto en la celda repetida <span class="math notranslate nohighlight">\((2, 2, 2)\)</span>:</p>
+<p><img alt="image.png" src="attachment:651d155b-2cdb-43eb-b385-5765ba5886d1.png" /></p>
+<p>En la imagen de la derecha se puede ver claramente las vacancias que dejó el quitar el átomo de Ca, esto implica la creación de un <strong>sitio intersticial</strong>. En palabras simples, este es el agujero/hueco que se da en un tipo de red cristalina, que implica que no importa la forma en la que se traten de organizar las “esferas” (como representación en este caso) de átomos, el hueco permanecerá allí. En una estructura 2D es bastante sencillo de observar, pero en una celda unitaria, la cual es una estructura en 3D, es más complejo, por lo que repetir la celda en los diferentes espacios trae una ventaja en su visualización que fue lo que se hizo en la imagen anterior. Para tener un poco más de claridad sobre cuáles son los átomos faltantes, observemos la siguiente imagen:</p>
+<p><img alt="Imagen de WhatsApp 2023-10-14 a las 11.50.55_fc137fe2.jpg" src="attachment:2c75be4d-ba41-4287-a199-bcfd635733e2.jpg" /></p>
+<p>Acá se puede ver que la <strong>ausencia de los átomos de Ca, es decir, los lugares marcados con una estrella</strong>, alteró la geometría inicial que se tenían en la imagen comparativa y ahora los átomos se acomodan de manera diferente; la eliminación de este también puede alterar la neutralidad de la carga del sólido. El sólido en su conjunto es eléctricamente neutro, por lo que la eliminación de una carga positiva puede requerir una compensación en otra parte de la estructura, que es un defecto que se tratará en un punto posterior. Otra de las implicaciones que trae consigo eliminar una carga positiva es que el sólido puede volverse más reactivo químicamente, esto dado que las vacancias que quedan expuestas allí pueden ser susceptibles a interacciones con demás moléculas y/o compuestos.</p>
+</section>
+<hr class="docutils" />
+<section id="item-2">
+<h4><strong>Item #2</strong><a class="headerlink" href="#item-2" title="Permalink to this heading">#</a></h4>
+<p>Cree un defecto de Frenkel. Explique.</p>
+<p>Para crear un defecto Frenkel primero debemos conocer de qué trata. Este, como lo vimos en clase, es un defecto puntual que se da en redes cristalinas. El defecto se forma cuando un átomo o un ion más pequeño (generalmente un catión) abandona su lugar en la red, creando una vacante y se convierte en un intersticial al alojarse en un lugar cercano. El átomo que moveremos para formar este defecto será el <strong>Oxígeno</strong> ya que además de ser el catión del sólido, gracias a que tiene un radio más pequeño que los otros dos elementos, permite una ubicación entre capas más sencilla. Primero se hará una observación del defecto en la celda unitaria y luego se mostrará cómo se ve de manera periódica. Esto es:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">material_Frenkel</span> <span class="o">=</span> <span class="n">read</span><span class="p">(</span><span class="s2">&quot;defectoFrenkel.cif&quot;</span><span class="p">)</span>
+<span class="n">view</span><span class="p">(</span><span class="n">material_Frenkel</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Popen: returncode: None args: [&#39;/home/eligran12/anaconda3/envs/crystals/bin...&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Multiplicando la celda <span class="math notranslate nohighlight">\((2,2,2)\)</span> se muestra el defecto de forma periódica de la siguiente forma:</p>
+<p><img alt="image.png" src="attachment:02fa2490-c811-4451-b45b-75ea1bf44ca5.png" /></p>
+<p>Se adjunta la visual desde el eje Z ya que es como si estuviera mirando la estructura cristalina desde arriba y en este eje fue que se movió el átomo de oxígeno señalado. En la siguiente imagen señalaremos dónde estaba este oxígeno que se movió para mayor claridad:</p>
+<p><img alt="Imagen de WhatsApp 2023-10-14 a las 13.15.36_f536ef0c.jpg" src="attachment:7eea703c-b804-4a71-b247-a076ddb8fb91.jpg" /></p>
+<p>Ahora, <strong>¿Qué implicaciones trae el defecto Frekkel?</strong>. Estas pueden variar en dependencia al material que se esté usando, dado que como se habló en clase, este defecto puede resultar una mejora en alguna característica eléctrica u optoelectrónica, entre otras; o puede resultar un “daño” o una desmejora en las propiedades intrínsecas del sólido. Por ejemplo, en los sólidos iónicos, donde estos defectos son muy comunes, la migración de cationes a sitios intersticiales puede crear portadores de carga móviles, mejorando la conductividad iónica (lo que sería una excelente ventaja para el mundo de las baterías de Li), además, consultando un poco la literatura, pude encontrar que CaZrO3 es conocido por sus interesantes propiedades eléctricas y esto la hace una perovskita bastante estudiada por su posible aplicación como material electrolítico en pilas de combustible de óxido sólido (SOFC) debido a su alta conductividad de iones de oxígeno a temperaturas elevadas, por lo que este defecto puede tener buenas consecuencias en este ella.</p>
+<p>Estos defectos tipo Frenkel pueden influir en las propiedades mecánicas de un material. El movimiento de átomos o iones dentro de la red puede afectar factores como la dureza, la elasticidad y la integridad estructural general. Además de esto, dado que cuando se mueve un átomo ubicado de un lugar específico a otro, se crea un sitio intersticial donde se encontraba inicialmente, estos sitios, como se mencionó en el punto anterior, pueden afectar la reactividad química del material. Las vacantes creadas pueden proporcionar sitios para reacciones químicas, lo que influye en las interacciones del material con otras sustancias.</p>
+</section>
+<hr class="docutils" />
+<section id="item-3">
+<h4><strong>Item #3</strong><a class="headerlink" href="#item-3" title="Permalink to this heading">#</a></h4>
+<p>Construya un defecto de Schottky. Explique.</p>
+<p>Como en el item anterior, es importante conocer qué es el efecto Schottky: se generan vacantes de iones de signo contrario para anularse de forma estequiométrica; con el fin de mantener una carga total neutra. Cada vacante es un defecto de Schottky por separado. En palabras más sencillas, consiste en la <strong>eliminación de un Catión y un Anión que tienen la misma carga</strong> de modo que el sólido permanece con carga neutra. Al igual que el defecto Frenkel, mostraremos el defecto en la celda unitaeria y luego una imagen comparativa entre la estructura libre de defectos y la estructura con el defecto Schottky de forma periódica.</p>
+<p>Los átomos que se eliminaron fueron: <strong>un átomo de Oxígeno cargado con <span class="math notranslate nohighlight">\(2^{-}\)</span> y un átomo de Calcio, cargado con <span class="math notranslate nohighlight">\(2^{+}\)</span></strong> por lo que esto lleva a una neutralidad en el sólido.</p>
+<p>Así pues, observemos cómo se muestra la celda unitaria con el defecto:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">material_Schottky</span> <span class="o">=</span> <span class="n">read</span><span class="p">(</span><span class="s2">&quot;defectoSchottky.cif&quot;</span><span class="p">)</span>
+<span class="n">view</span><span class="p">(</span><span class="n">material_Schottky</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Popen: returncode: None args: [&#39;/home/eligran12/anaconda3/envs/crystals/bin...&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Señalando de forma puntual los átomos que fueron eliminados:</p>
+<p><img alt="Imagen de WhatsApp 2023-10-15 a las 00.21.44_e8119e74.jpg" src="attachment:2725295b-9a4e-4b27-b0ce-18734054f193.jpg" /></p>
+<p>Multiplicando la celda <span class="math notranslate nohighlight">\((2,2,2)\)</span> se muestra que:</p>
+<p><img alt="image.png" src="attachment:a9282a1f-dc56-4e30-912a-ed7e94b469fd.png" /></p>
+<p><strong>¿Qué implicaciones trae consigo este defecto?</strong>. Dado que la eliminación de un anión y catión de la misma carga genera neutralidad, los defectos de Schottky suelen estar asociados con una disminución de la conductividad eléctrica en materiales iónicos. Además de esto, la creación de vacantes en la red cristalina debido a estos defectos puede provocar una reducción de la densidad del material, esto se debe a que las vacantes representan átomos faltantes, lo que reduce la masa total del material (teniendo en cuenta que la densidad de los sólidos y de la densidad en general, se define como: <span class="math notranslate nohighlight">\(\rho = m/v\)</span>).</p>
+<p>Los defectos Schottky también pueden influir en las propiedades ópticas de un sólido. Por ejemplo, en los semiconductores, la creación de defectos puede introducir niveles de energía dentro del band gap, afectando la absorción y emisión de luz. Además, la estructura cristalina alterada resultante de estos defectos puede afectar la conductividad térmica de un material: el movimiento de átomos o iones en respuesta a los cambios de temperatura puede afectar la forma en que se conduce el calor a través de la red. Recordando que las Perovskitas tienen como una de las aplicaciones principales su uso en celdas solares, esta propiedad de conductividad térmica afectada de alguna forma u otra por el defecto Schottky, puede traer consecuencias en la parte específica de las celdas solares que se encarga de la recepción de los fotones.</p>
+<p>De forma idéntica que los otros dos defectos anteriores, en este también las vacancias pueden afectar la reactividad de un material.</p>
+</section>
+<hr class="docutils" />
+<section id="item-4">
+<h4><strong>Item #4</strong><a class="headerlink" href="#item-4" title="Permalink to this heading">#</a></h4>
+<p>Muestre una impureza por sustitución isomórfica de un átomo por otro diferente. Explique.</p>
+<p>La sustitución isomórfica se refiere a la sustitución de un tipo de átomo o ion por otro de tamaño y carga similar en una red cristalina, sin cambiar la estructura general del cristal. Esta sustitución puede ocurrir en minerales, cerámicas y otros materiales cristalinos. Generalmente el átomo que se intercambia es uno de los cationes de la estructura por otro externo que tenga un tamaño parecido. ¿Cómo se puede lograr esto? Si se recuerdan algunas nociones de tendencias periódicas, podemos saber que el radio atómico (tamaño) aumenta de arriba hacia abajo. En este caso, el átomo que sustituiremos será <strong>un átomo de Calcio por un átomo de Titano</strong>. Esta desición se tomó basada en el tamaño de su orbital más externo. Con la ayuda de Ptable observemos los tamaños de estos orbitales:</p>
+<p><img alt="image.png" src="attachment:6dd95548-5b58-4578-a742-d08e3e3bcdf4.png" /></p>
+<p>Si se observan los números atómicos de ambos elementos, se puede ver que están muy cercanos el uno del otro, lo que refleja un tamaño parecido a la hora de realizar la sustitución de Ca por Ti. Veamos cómo queda esto en la celda unitaria:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">material_Isomorfic</span> <span class="o">=</span> <span class="n">read</span><span class="p">(</span><span class="s2">&quot;sustitucionIsomorficaCa_Ti.cif&quot;</span><span class="p">)</span>
+<span class="n">view</span><span class="p">(</span><span class="n">material_Isomorfic</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Popen: returncode: None args: [&#39;/home/eligran12/anaconda3/envs/crystals/bin...&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Comparando la celda unitaria inicial y la de la sustitución isomórfica, nos queda que:</p>
+<p><img alt="image.png" src="attachment:bebdb00d-eb1c-4ce2-8cc8-016c2e213d62.png" /></p>
+<p>Ahora, <strong>¿Qué implicaciones tiene una sustitución isomórfica?</strong> Este tipo de defectos, permite la sintonización de las propiedades de los materiales. Al controlar la composición mediante sustitución, es posible influir en características como el color, la dureza, la conductividad eléctrica y otras propiedades físicas y químicas. Esta es aplicada principalmente en los campos de la cerámica y la metalurgia. Por ejemplo, en materiales cerámicos, la sustitución de iones se puede utilizar para modificar las propiedades eléctricas y térmicas. En las aleaciones, la sustitución isomórfica juega un papel en la creación de soluciones sólidas con las características mecánicas y térmicas deseadas.</p>
+<p>Una de sus funciones más importantes es que cumple el papel como <strong>elemento clave para el dopaje en los semiconductores</strong>. El dopaje, en palabras simples, consiste en introducir intencionalmente impurezas o cambiar átomos o introducir átomos en una estructura cristalina para modificar sus propiedades eléctricas, ópticas o estructurales. En semiconductores se usa para controlar la conductividad del material, y como es bien sabido, el papel de los semiconductores y las investigaciones, desarrollos, mejoras, de estos son de vital importancia para la vida humana ya que en el diario vivir de la mayoría de los seres humanos, utilizamos los semiconductores de manera directa o indirecta.</p>
+</section>
+<hr class="docutils" />
+<section id="item-5">
+<h4><strong>Item #5</strong><a class="headerlink" href="#item-5" title="Permalink to this heading">#</a></h4>
+<p>Agregue una impureza intersticial, de un átomo foráneo. Explique.</p>
+<p>Este defecto consiste en introducir un átomo externo (en este caso a elección nuestra) en una vacancia en el material. El átomo que se introducirá será <strong>Fósforo</strong>. El por qué consiste en que la idea es que el átomo que se agregue pueda estar cargado (pueda tener estado de oxidación) que permita tener afinidad electrónica con el resto de la estructura. Si recordamos un poco lo visto en cursos anteriores de química, podemos saber que los elementos siempre tienden a perder o a ganar la cantidad necesaria de electrones para “parecerse” (tener mismo numero de electrones y protones) que los gases nobles. Además de esto, recordando el concepto de enlace covalente, podemos saber que son enlaces que se forman entre no metales y son bastante fuertes; por lo que con el uso de estos dos conceptos, el fósforo fue el candidato para agregarse: <strong>la posibilidad de la formación de enlaces fuertes en la estructura podría mejorar las propiedades de dureza del material y afectar demás características</strong>.</p>
+<p>Observemos entonces en primer lugar como queda esta sustitución:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">material_Impureza</span> <span class="o">=</span> <span class="n">read</span><span class="p">(</span><span class="s2">&quot;impurezaIntersticialFosforo.cif&quot;</span><span class="p">)</span>
+<span class="n">view</span><span class="p">(</span><span class="n">material_Impureza</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Popen: returncode: None args: [&#39;/home/eligran12/anaconda3/envs/crystals/bin...&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Comparando:</p>
+<p><img alt="image.png" src="attachment:a7bfea2d-a136-441b-b70b-dd2b5237009a.png" /></p>
+<p><strong>Las implicaciones de añadir este átomo de Fosforo</strong> son varias. Para mencionar cuáles son estas consecuencias es importante conocer una característica de la perovskita <span class="math notranslate nohighlight">\(CaZrO_{3}\)</span>: esta es conocida por su flexibilidad y versatilidad, por lo que el añadir átomos a su configuración puede provocar diferentes efectos, entre ellos, el añadir un átomo externo a la red cristalina en un sitio intersticial puede provocar distorsiones locales en esta. El tamaño del átomo de <strong>P</strong> (en este caso) y su interacción con los átomos vecinos pueden afectar la simetría y estabilidad generales de la estructura de la perovskita.</p>
+<p>Dado que el fósforo tiene una carga diferente al Ca y al Zr, esto puede provocar un desequilibrio de carga en la estructura de la perovskita, influyendo en sus propiedades electrónicas. Además, al añadir este átomo externo lo que hacemos es <strong>dopar</strong> el material por lo que las consecuencias también se verían reflejadas en su conductividad eléctrica. Dado que el fósforo se ubica en un sitio intersticial, esto puede afectar la reactividad del material además de sus propiedades ópticas: la adición puede influir en su capacidad para absorber, reflejar o transmitir luz.</p>
+<p>Con el fin de ver cómo quedan los enlaces que se forman al agregar el enlace de fósforo, observemos estas imágenes render comparativas:</p>
+<p><img alt="image.png" src="attachment:922f5748-2118-41a9-bd36-c12a95f9f946.png" /></p>
+<p>Como se puede observar, en la figura con el átomo de fósforo (átomo amarillo), hay una mayor cantidad de enlaces por la añadidura de este a la estructura cristalina.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="punto-2">
+<h3><strong>Punto #2</strong><a class="headerlink" href="#punto-2" title="Permalink to this heading">#</a></h3>
+<section id="id1">
+<h4><strong>Item #1</strong><a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h4>
+<p>Ubique el diagrama de fases del sistema cristalino e interprételo en detalle. Indique cuál(s) es(son) la(s) especie(s) más estables y si el sistema que usted tiene es o no estable.</p>
+<p>Observemos el diagrama de fases:</p>
+<p><img alt="image.png" src="attachment:5438e3be-33a5-4e36-8b0a-18d6042592e3.png" /></p>
+<p>Este diagrama de fases es un caso particular ya que los puntos de estabilidad, representados por el punto verde, y los putos color rojo representan la energía por encima del casco, que esta habla sobre la diferencia de energía entre una fase particular de un material y la fase más estable en un conjunto determinado de condiciones (0 K en este caso). El “casco” en este contexto representa el <strong>casco convexo</strong> de un diagrama de fases, donde cada punto del casco corresponde a la composición y estructura más estable en condiciones específicas de temperatura y presión. Teniendo ya en mente a qué se refiere el casco podemos definir la energía por encima del casco, la cual es la <strong>energía necesaria para transformar un material de una fase específica a la fase más estable con una composición determinada</strong>. Es esencialmente una medida de qué tan lejos está un material de su estado termodinámicamente más estable. Esta diferencia de energía puede ser positiva o negativa.</p>
+<p>Haciendo una observación de los puntos estables podemos ver que:</p>
+<p><img alt="Imagen de WhatsApp 2023-10-15 a las 13.25.47_7bce9b31.jpg" src="attachment:3a83ce12-a707-4780-93f5-fa7cf845ba66.jpg" /></p>
+<p>Los numeros que están allí representan el porcentaje de cada elemento en el sistema en ese punto. Las letras <strong>A, B y C representan a Ca, Zr y <span class="math notranslate nohighlight">\(O_{2}\)</span></strong> respectivamente. Así, por ejemplo, en las esquinas el sitema está en su totalidad compuesto ya sea por Calcio, Circonio u Oxígeno. Así pues, cambiando las letras por los elementos tenemos que existen puntos de estabilidad donde coexisten el Ca y el O (<span class="math notranslate nohighlight">\(50 %\)</span> A, <span class="math notranslate nohighlight">\(50 %\)</span> B); o donde coexisten los tres elementos en cantidades diferentes, pero estable (<span class="math notranslate nohighlight">\(20 %\)</span> A, <span class="math notranslate nohighlight">\(20 %\)</span> B, <span class="math notranslate nohighlight">\(60 %\)</span> C); y así sucesivamente. Nombrando todas las estabilidades que existen en los diferentes puntos tenemos que:</p>
+<p><img alt="Imagen de WhatsApp 2023-10-15 a las 13.50.49_9b9a876f.jpg" src="attachment:73e9390a-3cc9-4788-8ef8-235d162988f9.jpg" /></p>
+<p>Cada uno de los paréntesis corresponde a un ID en materials project de un compuesto diferente; el punto señalado con resaltador verde es la estructura que estamos trabajando en la práctica: <strong>mp-4175</strong>. El numero con unidades de <span class="math notranslate nohighlight">\(\frac {eV}{atom}\)</span> representa la <strong>energía de formación del compuesto</strong>, por lo que para la Perovskita que se nos fue asignada esta energía tiene un valor de <span class="math notranslate nohighlight">\(-3.627 \frac {eV}{atom}\)</span>. Interpretando un poco de qué significa la energía de formación, tenemos que ésta está dada por la siguiente fórmula matemática:</p>
+<div class="math notranslate nohighlight">
+\[H_{f} = H_{products} - \sum_{i} n_{i} H_{reactives_{i}}\]</div>
+<p>Cuando este resultado es negativo, como es nuestro caso, esto indica que la formación del compuesto es <strong>exotérmica</strong>, lo que significa que libera energía. Esto a menudo se asocia con que el compuesto es termodinámicamente estable en condiciones estándar. Estas energías de formación se utilizan en termodinámica para calcular el cambio de entalpía de reacciones químicas con compuestos determinados. Además. en el área de la química computacional se calculan a menudo utilizando métodos de mecánica cuántica para predecir la <strong>estabilidad de materiales y compuestos</strong>. El objetivo es comprender y diseñar materiales con propiedades deseables y estables: que puedan existir en el medio ambiente para que su utilidad pueda trascender y se pueda crear (en caso de que el compeusto sea bueno y útil) producciones en masa.</p>
+<p>Y ahora, haciendo una observación de los compuestos que se forman en los puntos rojos, es decir, los de menos estabilidad, tenemos que:</p>
+<p><img alt="Imagen de WhatsApp 2023-10-16 a las 09.30.55_c190b83f.jpg" src="attachment:4674e1cd-e6fe-42d3-ab42-d584b8f0da65.jpg" /></p>
+<p>Donde los circulos de la izquierda corresponden a las especies encerradas con estos mismos en la parte de abajo del diagrama de fase, se puso de esta forma por cuestiones de espacio. Cabe resaltar algo de este diagrama de fases y es que la mayoría de las especies que correspondían a puntos de un color rojo más oscuro/más vivo, fueron halladas usando el funcional de densidad <strong>GGA</strong>, mientras que para las especies de los puntos más claros, es decir, acercándose a la estabilidad y los puntos verdes de completa estabilidad, el funcional de densidad usado fue <strong>R2SCAN</strong>. Ambos son funcionales de los cálculos DFT para realizar cálculos de estructura electrónica.</p>
+</section>
+<hr class="docutils" />
+<section id="id2">
+<h4><strong>Item #2</strong><a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h4>
+<p>Ubique el diagrama de energía de formación</p>
+<p>Cuando en materials project se clickea el dato sobre la energía de formación, este lleva al diagrama de fases dado que, como explicamos anteriormente, la energía de formación es la energía a la que se da una especie en específico a ciertas condiciones y que dependiendo si su resultado es negativo o positivo, la formación será exotérmica o endotérmica respectivamente.</p>
+</section>
+<hr class="docutils" />
+<section id="id3">
+<h4><strong>Item #3</strong><a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h4>
+<p>Ubique la estructura electrónica, particularmente la estructura de bandas y la densidad de estados. Interprete la gráfica de acuerdo con lo visto en clase.</p>
+<p>Observemos el gráfico de DOS y de la estructura de bandas de la perovskita:</p>
+<p><img alt="image.png" src="attachment:f2a435fd-fc11-4085-a5ad-12b71d69b2ce.png" /></p>
+<p>Con un <strong>band gap de <span class="math notranslate nohighlight">\(3.83\)</span></strong> eV el sistema, como vimos en clase, es <strong>no metálico</strong>. Generalmente se considera un aislante o semiconductor gracias al valor de su band gap; se dice generalmente ya que los semiconductores tienen un band gap que está aproximadamente entre el rango de <span class="math notranslate nohighlight">\(1\)</span> a <span class="math notranslate nohighlight">\(3\)</span> eV, dado que <span class="math notranslate nohighlight">\(CaZrO_{3}\)</span> tiene un poco más de <span class="math notranslate nohighlight">\(3\)</span> en el band gap, es considerado más un aislante. Pero <strong>¿Qué significa que sea un material aislante?</strong> estos materiales son aquellos en los que la corriente eléctrica no fluye libremente. Los átomos del aislante tienen electrones fuertemente unidos que no pueden moverse fácilmente. Caso contrario a los semiconductores y conductores, que conducen la corriente eléctrica más fácilmente.</p>
+<p>Ahora, <strong>¿Qué nos dice la Densidad de Estados?</strong>, esta habla sobre la cantidad de estados cuánticos en un rango de energía específico, según lo que se definió en clase. Se puede definir también como la distribución de estados electrónicos en un material. Proporciona información sobre el número de estados electrónicos por intervalo unitario de energía lo que siginifica que es <strong>una función de la energía</strong>. El DOS es un parámetro crucial para comprender las propiedades electrónicas de los materiales, incluidos metales, semiconductores y aislantes. Matemáticamente en un volumen etá definidido como:</p>
+<div class="math notranslate nohighlight">
+\[D(E) = \frac {1}{V} \sum_{i=1} ^{N}  \delta (E-E(k_{i}))\]</div>
+<p>Si observamos la densidad de estados de los electrones en el borde de la banda entre las bandas de valencia y de conducción en un semiconductor, para un electrón en la banda de conducción, un aumento de la energía del electrón hace que haya más estados disponibles para su ocupación. Alternativamente, la densidad de estados es discontinua durante un intervalo de energía, lo que significa que no hay estados disponibles para que los electrones los ocupen dentro del band gap del material, en el caso de nuestra perovskita esto se presenta en el rango de energía de <span class="math notranslate nohighlight">\(0\)</span> a <span class="math notranslate nohighlight">\(3.80\)</span> aprox, que es el tamaño del gap. Esta condición también significa que <strong>un electrón en el borde de la banda de conducción debe perder al menos la energía del band gap del material para poder pasar a otro estado en la banda de valencia</strong>. Como conclusión, se puede ver que la de densidad de estados está directamente relacionado con el band gap y esto hace que por ejemplo en algunos casos, no se tenga que calcular la estructura de bandas de un material sino solamente la densidad de estados (que es computacionalmente más barata) dado que trae exactamente la misma información que las bandas.</p>
+</section>
+<hr class="docutils" />
+<section id="id4">
+<h4><strong>Item #4</strong><a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h4>
+<p>Usando Jupyter-lab, cargue el .CIF, visualice (print) la información cristalográfica y observe la estructura usando la herramienta Crystal Toolkit. Determine los estados de oxidación de cada átomo en la estructura cristalina, usando la metodología vista en clase. Visualice sus datos (print). Muestre las líneas de código utilizadas.</p>
+<p>Anteriormente se importaron las librerías que se utilizarán para todo el código por lo que no se hará de nuevo.</p>
+<p>Primero, <strong>cargamos el <code class="docutils literal notranslate"><span class="pre">.cif</span></code></strong> y <strong>mostramos la perovskita usando crystal toolkit</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">structure_ini</span> <span class="o">=</span> <span class="n">Structure</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="s2">&quot;CaZrO3.cif&quot;</span><span class="p">)</span>
+<span class="n">structure_ini</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>If you see this text, the Crystal Toolkit Jupyter Lab 
+
+extension is not installed. You can install it by running 
+
+&quot;pip install crystaltoolkit-extension&quot; 
+
+from the same environment you run &quot;jupyter lab&quot;. 
+
+This only works in Jupyter Lab 3.x or above.
+
+
+Structure Summary
+Lattice
+    abc : 5.77809678 8.01738023 5.58500572
+ angles : 90.0 90.0 90.0
+ volume : 258.7265007863652
+      A : 5.77809678 0.0 3.538063863395314e-16
+      B : 1.2892930738932681e-15 8.01738023 4.909229518108385e-16
+      C : 0.0 0.0 5.58500572
+    pbc : True True True
+PeriodicSite: Ca0 (Ca2+) (0.3002, 6.013, 5.509) [0.05196, 0.75, 0.9865]
+PeriodicSite: Ca0 (Ca2+) (5.478, 2.004, 0.07564) [0.948, 0.25, 0.01354]
+PeriodicSite: Ca0 (Ca2+) (2.589, 2.004, 2.717) [0.448, 0.25, 0.4865]
+PeriodicSite: Ca0 (Ca2+) (3.189, 6.013, 2.868) [0.552, 0.75, 0.5135]
+PeriodicSite: Zr1 (Zr4+) (0.0, 0.0, 2.793) [0.0, 0.0, 0.5]
+PeriodicSite: Zr1 (Zr4+) (2.889, 0.0, 1.769e-16) [0.5, 0.0, 0.0]
+PeriodicSite: Zr1 (Zr4+) (2.889, 4.009, 4.224e-16) [0.5, 0.5, 0.0]
+PeriodicSite: Zr1 (Zr4+) (6.446e-16, 4.009, 2.793) [0.0, 0.5, 0.5]
+PeriodicSite: O2 (O2-) (1.157, 0.4537, 1.104) [0.2003, 0.05658, 0.1976]
+PeriodicSite: O2 (O2-) (4.621, 7.564, 4.481) [0.7997, 0.9434, 0.8024]
+PeriodicSite: O2 (O2-) (1.732, 7.564, 3.896) [0.2997, 0.9434, 0.6976]
+PeriodicSite: O2 (O2-) (4.046, 0.4537, 1.689) [0.7003, 0.05658, 0.3024]
+PeriodicSite: O2 (O2-) (4.046, 3.555, 1.689) [0.7003, 0.4434, 0.3024]
+PeriodicSite: O2 (O2-) (1.732, 4.462, 3.896) [0.2997, 0.5566, 0.6976]
+PeriodicSite: O2 (O2-) (4.621, 4.462, 4.481) [0.7997, 0.5566, 0.8024]
+PeriodicSite: O2 (O2-) (1.157, 3.555, 1.104) [0.2003, 0.4434, 0.1976]
+PeriodicSite: O3 (O2-) (0.2401, 2.004, 3.389) [0.04156, 0.25, 0.6068]
+PeriodicSite: O3 (O2-) (5.538, 6.013, 2.196) [0.9584, 0.75, 0.3932]
+PeriodicSite: O3 (O2-) (2.649, 6.013, 0.5967) [0.4584, 0.75, 0.1068]
+PeriodicSite: O3 (O2-) (3.129, 2.004, 4.988) [0.5416, 0.25, 0.8932]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Hacemos un print de la información de la estructura:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Imprimimos la informacion de la Perovskita</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">structure_ini</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Full Formula (Ca4 Zr4 O12)
+Reduced Formula: CaZrO3
+abc   :   5.778097   8.017380   5.585006
+angles:  90.000000  90.000000  90.000000
+pbc   :       True       True       True
+Sites (20)
+  #  SP           a         b         c
+---  ----  --------  --------  --------
+  0  Ca2+  0.051958  0.75      0.986456
+  1  Ca2+  0.948042  0.25      0.013544
+  2  Ca2+  0.448042  0.25      0.486456
+  3  Ca2+  0.551958  0.75      0.513544
+  4  Zr4+  0         0         0.5
+  5  Zr4+  0.5       0         0
+  6  Zr4+  0.5       0.5       0
+  7  Zr4+  0         0.5       0.5
+  8  O2-   0.200308  0.056584  0.197625
+  9  O2-   0.799692  0.943416  0.802375
+ 10  O2-   0.299692  0.943416  0.697625
+ 11  O2-   0.700308  0.056584  0.302375
+ 12  O2-   0.700308  0.443416  0.302375
+ 13  O2-   0.299692  0.556584  0.697625
+ 14  O2-   0.799692  0.556584  0.802375
+ 15  O2-   0.200308  0.443416  0.197625
+ 16  O2-   0.041559  0.25      0.606846
+ 17  O2-   0.958441  0.75      0.393154
+ 18  O2-   0.458441  0.75      0.106846
+ 19  O2-   0.541559  0.25      0.893154
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Los estados de oxidación</strong> se mostraron previamente para el punto anterior, trayéndolos de nuevo tenemos:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cargas_</span> <span class="o">=</span> <span class="n">AutoOxiStateDecorationTransformation</span><span class="p">()</span>
+<span class="n">carga_cif</span> <span class="o">=</span> <span class="n">cargas_</span><span class="o">.</span><span class="n">apply_transformation</span><span class="p">(</span><span class="n">structure_ini</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">carga_cif</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Full Formula (Ca4 Zr4 O12)
+Reduced Formula: CaZrO3
+abc   :   5.778097   8.017380   5.585006
+angles:  90.000000  90.000000  90.000000
+pbc   :       True       True       True
+Sites (20)
+  #  SP           a         b         c
+---  ----  --------  --------  --------
+  0  Ca2+  0.051958  0.75      0.986456
+  1  Ca2+  0.948042  0.25      0.013544
+  2  Ca2+  0.448042  0.25      0.486456
+  3  Ca2+  0.551958  0.75      0.513544
+  4  Zr4+  0         0         0.5
+  5  Zr4+  0.5       0         0
+  6  Zr4+  0.5       0.5       0
+  7  Zr4+  0         0.5       0.5
+  8  O2-   0.200308  0.056584  0.197625
+  9  O2-   0.799692  0.943416  0.802375
+ 10  O2-   0.299692  0.943416  0.697625
+ 11  O2-   0.700308  0.056584  0.302375
+ 12  O2-   0.700308  0.443416  0.302375
+ 13  O2-   0.299692  0.556584  0.697625
+ 14  O2-   0.799692  0.556584  0.802375
+ 15  O2-   0.200308  0.443416  0.197625
+ 16  O2-   0.041559  0.25      0.606846
+ 17  O2-   0.958441  0.75      0.393154
+ 18  O2-   0.458441  0.75      0.106846
+ 19  O2-   0.541559  0.25      0.893154
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="id5">
+<h4><strong>Item #5</strong><a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h4>
+<p>Visualice (print) el grupo espacial, volumen y simetría. Muestre las líneas de código usadas.</p>
+<p><strong>Grupo espacial, volumen, densidad y simetría:</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Grupo espacial: </span><span class="si">{</span><span class="n">structure_ini</span><span class="o">.</span><span class="n">get_space_group_info</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Volumen: </span><span class="si">{</span><span class="n">structure_ini</span><span class="o">.</span><span class="n">volume</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Densidad: </span><span class="si">{</span><span class="n">structure_ini</span><span class="o">.</span><span class="n">density</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Grupo espacial: (&#39;Pnma&#39;, 62)
+Volumen: 258.7265007863652
+Densidad: 4.603084505750543 g cm^-3
+</pre></div>
+</div>
+</div>
+</div>
+<p>Para obtener la simetría, lo haremos utilizando la función <code class="docutils literal notranslate"><span class="pre">SpacegroupAnalyzer</span></code>, además de esto, se puede tener las operaciones de simetría que tiene esta estructura con esta misma función, esto es:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Simetria</span>
+<span class="n">simmetry</span> <span class="o">=</span> <span class="n">SpacegroupAnalyzer</span><span class="p">(</span><span class="n">structure_ini</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;El CZrO3 tiene simetría: </span><span class="si">{</span><span class="n">simmetry</span><span class="o">.</span><span class="n">get_crystal_system</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1">#Operaciones de simetria:</span>
+<span class="n">symmetry_operations</span> <span class="o">=</span> <span class="n">simmetry</span><span class="o">.</span><span class="n">get_symmetry_operations</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">operation</span> <span class="ow">in</span> <span class="n">symmetry_operations</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">operation</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>El CZrO3 tiene simetría: orthorhombic
+Rot:
+[[1. 0. 0.]
+ [0. 1. 0.]
+ [0. 0. 1.]]
+tau
+[0. 0. 0.]
+Rot:
+[[-1.  0.  0.]
+ [ 0. -1.  0.]
+ [ 0.  0. -1.]]
+tau
+[0. 0. 0.]
+Rot:
+[[-1.  0.  0.]
+ [ 0. -1.  0.]
+ [ 0.  0.  1.]]
+tau
+[0.5 0.  0.5]
+Rot:
+[[ 1.  0.  0.]
+ [ 0.  1.  0.]
+ [ 0.  0. -1.]]
+tau
+[0.5 0.  0.5]
+Rot:
+[[ 1.  0.  0.]
+ [ 0. -1.  0.]
+ [ 0.  0. -1.]]
+tau
+[0.5 0.5 0.5]
+Rot:
+[[-1.  0.  0.]
+ [ 0.  1.  0.]
+ [ 0.  0.  1.]]
+tau
+[0.5 0.5 0.5]
+Rot:
+[[-1.  0.  0.]
+ [ 0.  1.  0.]
+ [ 0.  0. -1.]]
+tau
+[0.  0.5 0. ]
+Rot:
+[[ 1.  0.  0.]
+ [ 0. -1.  0.]
+ [ 0.  0.  1.]]
+tau
+[0.  0.5 0. ]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="punto-3">
+<h3><strong>Punto #3</strong><a class="headerlink" href="#punto-3" title="Permalink to this heading">#</a></h3>
+<p>Cargue archivo con su estructura directamente a Jupyter-lab desde Pymatgen. No use el .CIF
+descargado en los puntos anteriores. Use este sistema para brindar respuesta a lo solicitado. En los puntos
+donde corresponda, muestre las líneas de código utilizadas.</p>
+<section id="id6">
+<h4><strong>Item #1</strong><a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h4>
+<p>Seleccione un átomo de su elección para moverlo 0.1 Å en la dirección que desee. Indique qué tipo de simetría espacial tendría este sistema, además de la nueva densidad y volumen.</p>
+<p>En este caso <strong>moveremos el átomo número 7</strong> que corresponde al <span class="math notranslate nohighlight">\(Zr^{4+}\)</span>, esto es:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">structure_move</span> <span class="o">=</span> <span class="n">Structure</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="s2">&quot;CaZrO3.cif&quot;</span><span class="p">)</span>
+<span class="n">structure_move</span><span class="o">.</span><span class="n">translate_sites</span><span class="p">([</span><span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">])</span>
+<span class="n">structure_move</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>If you see this text, the Crystal Toolkit Jupyter Lab 
+
+extension is not installed. You can install it by running 
+
+&quot;pip install crystaltoolkit-extension&quot; 
+
+from the same environment you run &quot;jupyter lab&quot;. 
+
+This only works in Jupyter Lab 3.x or above.
+
+
+Structure Summary
+Lattice
+    abc : 5.77809678 8.01738023 5.58500572
+ angles : 90.0 90.0 90.0
+ volume : 258.7265007863652
+      A : 5.77809678 0.0 3.538063863395314e-16
+      B : 1.2892930738932681e-15 8.01738023 4.909229518108385e-16
+      C : 0.0 0.0 5.58500572
+    pbc : True True True
+PeriodicSite: Ca0 (Ca2+) (0.3002, 6.013, 5.509) [0.05196, 0.75, 0.9865]
+PeriodicSite: Ca0 (Ca2+) (5.478, 2.004, 0.07564) [0.948, 0.25, 0.01354]
+PeriodicSite: Ca0 (Ca2+) (2.589, 2.004, 2.717) [0.448, 0.25, 0.4865]
+PeriodicSite: Ca0 (Ca2+) (3.189, 6.013, 2.868) [0.552, 0.75, 0.5135]
+PeriodicSite: Zr1 (Zr4+) (0.0, 0.0, 2.793) [0.0, 0.0, 0.5]
+PeriodicSite: Zr1 (Zr4+) (2.889, 0.0, 1.769e-16) [0.5, 0.0, 0.0]
+PeriodicSite: Zr1 (Zr4+) (2.889, 4.009, 4.224e-16) [0.5, 0.5, 0.0]
+PeriodicSite: Zr1 (Zr4+) (7.736e-16, 4.81, 2.793) [0.0, 0.6, 0.5]
+PeriodicSite: O2 (O2-) (1.157, 0.4537, 1.104) [0.2003, 0.05658, 0.1976]
+PeriodicSite: O2 (O2-) (4.621, 7.564, 4.481) [0.7997, 0.9434, 0.8024]
+PeriodicSite: O2 (O2-) (1.732, 7.564, 3.896) [0.2997, 0.9434, 0.6976]
+PeriodicSite: O2 (O2-) (4.046, 0.4537, 1.689) [0.7003, 0.05658, 0.3024]
+PeriodicSite: O2 (O2-) (4.046, 3.555, 1.689) [0.7003, 0.4434, 0.3024]
+PeriodicSite: O2 (O2-) (1.732, 4.462, 3.896) [0.2997, 0.5566, 0.6976]
+PeriodicSite: O2 (O2-) (4.621, 4.462, 4.481) [0.7997, 0.5566, 0.8024]
+PeriodicSite: O2 (O2-) (1.157, 3.555, 1.104) [0.2003, 0.4434, 0.1976]
+PeriodicSite: O3 (O2-) (0.2401, 2.004, 3.389) [0.04156, 0.25, 0.6068]
+PeriodicSite: O3 (O2-) (5.538, 6.013, 2.196) [0.9584, 0.75, 0.3932]
+PeriodicSite: O3 (O2-) (2.649, 6.013, 0.5967) [0.4584, 0.75, 0.1068]
+PeriodicSite: O3 (O2-) (3.129, 2.004, 4.988) [0.5416, 0.25, 0.8932]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Calculando la <strong>densidad y volumen de nuevo:</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">structure_move_atom</span> <span class="o">=</span>  <span class="n">SpacegroupAnalyzer</span><span class="p">(</span><span class="n">structure_move</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Densidad despues de haber movido el átomo 7 (Zr4+) 0.1 A en el eje Y: </span><span class="si">{</span><span class="n">structure_move</span><span class="o">.</span><span class="n">density</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Volumen despues de haber movido el átomo 7 (Zr4+) 0.1 A en el eje Y: </span><span class="si">{</span><span class="n">structure_move</span><span class="o">.</span><span class="n">volume</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Simetría despues de haber movido el átomo 7 (Zr4+) 0.1 A en el eje Y: </span><span class="si">{</span><span class="n">structure_move_atom</span><span class="o">.</span><span class="n">get_crystal_system</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Grupo espacial despues de haber movido el átomo 7 (Zr4+) 0.1 A en el eje Y: </span><span class="si">{</span><span class="n">structure_move</span><span class="o">.</span><span class="n">get_space_group_info</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Densidad despues de haber movido el átomo 7 (Zr4+) 0.1 A en el eje Y: 4.603084505750543 g cm^-3
+Volumen despues de haber movido el átomo 7 (Zr4+) 0.1 A en el eje Y: 258.7265007863652
+Simetría despues de haber movido el átomo 7 (Zr4+) 0.1 A en el eje Y: triclinic
+Grupo espacial despues de haber movido el átomo 7 (Zr4+) 0.1 A en el eje Y: (&#39;P1&#39;, 1)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Escribimos la información en un archivo <code class="docutils literal notranslate"><span class="pre">cif</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%capture</span>
+<span class="n">structure_move</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s2">&quot;RemoveAtom7.cif&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id7">
+<h4><strong>Item #2</strong><a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h4>
+<p>Seleccione un átomo diferente y sustitúyalo por otro tipo de átomo de su preferencia. Indique el tipo de simetría resultante, junto con la nueva densidad y volumen.</p>
+<p>En este caso <strong>seleccionaremos el átomo 2 de <span class="math notranslate nohighlight">\(Ca^{2+}\)</span></strong> por un átomo de <strong>Hafnio (Hf)</strong>. Esto es:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">structure_replace</span> <span class="o">=</span> <span class="n">Structure</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="s2">&quot;CaZrO3.cif&quot;</span><span class="p">)</span>
+<span class="n">structure_replace</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;Hf&#39;</span><span class="p">)</span>
+<span class="n">structure_replace</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>If you see this text, the Crystal Toolkit Jupyter Lab 
+
+extension is not installed. You can install it by running 
+
+&quot;pip install crystaltoolkit-extension&quot; 
+
+from the same environment you run &quot;jupyter lab&quot;. 
+
+This only works in Jupyter Lab 3.x or above.
+
+
+Structure Summary
+Lattice
+    abc : 5.77809678 8.01738023 5.58500572
+ angles : 90.0 90.0 90.0
+ volume : 258.7265007863652
+      A : 5.77809678 0.0 3.538063863395314e-16
+      B : 1.2892930738932681e-15 8.01738023 4.909229518108385e-16
+      C : 0.0 0.0 5.58500572
+    pbc : True True True
+PeriodicSite: Ca0 (Ca2+) (0.3002, 6.013, 5.509) [0.05196, 0.75, 0.9865]
+PeriodicSite: Ca0 (Ca2+) (5.478, 2.004, 0.07564) [0.948, 0.25, 0.01354]
+PeriodicSite: Hf (2.589, 2.004, 2.717) [0.448, 0.25, 0.4865]
+PeriodicSite: Ca0 (Ca2+) (3.189, 6.013, 2.868) [0.552, 0.75, 0.5135]
+PeriodicSite: Zr1 (Zr4+) (0.0, 0.0, 2.793) [0.0, 0.0, 0.5]
+PeriodicSite: Zr1 (Zr4+) (2.889, 0.0, 1.769e-16) [0.5, 0.0, 0.0]
+PeriodicSite: Zr1 (Zr4+) (2.889, 4.009, 4.224e-16) [0.5, 0.5, 0.0]
+PeriodicSite: Zr1 (Zr4+) (6.446e-16, 4.009, 2.793) [0.0, 0.5, 0.5]
+PeriodicSite: O2 (O2-) (1.157, 0.4537, 1.104) [0.2003, 0.05658, 0.1976]
+PeriodicSite: O2 (O2-) (4.621, 7.564, 4.481) [0.7997, 0.9434, 0.8024]
+PeriodicSite: O2 (O2-) (1.732, 7.564, 3.896) [0.2997, 0.9434, 0.6976]
+PeriodicSite: O2 (O2-) (4.046, 0.4537, 1.689) [0.7003, 0.05658, 0.3024]
+PeriodicSite: O2 (O2-) (4.046, 3.555, 1.689) [0.7003, 0.4434, 0.3024]
+PeriodicSite: O2 (O2-) (1.732, 4.462, 3.896) [0.2997, 0.5566, 0.6976]
+PeriodicSite: O2 (O2-) (4.621, 4.462, 4.481) [0.7997, 0.5566, 0.8024]
+PeriodicSite: O2 (O2-) (1.157, 3.555, 1.104) [0.2003, 0.4434, 0.1976]
+PeriodicSite: O3 (O2-) (0.2401, 2.004, 3.389) [0.04156, 0.25, 0.6068]
+PeriodicSite: O3 (O2-) (5.538, 6.013, 2.196) [0.9584, 0.75, 0.3932]
+PeriodicSite: O3 (O2-) (2.649, 6.013, 0.5967) [0.4584, 0.75, 0.1068]
+PeriodicSite: O3 (O2-) (3.129, 2.004, 4.988) [0.5416, 0.25, 0.8932]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Escribimos archivo <code class="docutils literal notranslate"><span class="pre">.cif</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%capture</span>
+<span class="n">structure_replace</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s2">&quot;ReplaceAtom2.cif&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Simetría, densidad y volumen nuevos:</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">simmetry_Hf</span> <span class="o">=</span> <span class="n">SpacegroupAnalyzer</span><span class="p">(</span><span class="n">structure_replace</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Volumen despues de cambiar átomo 2 (Ca2+) por un átomo de Hf: </span><span class="si">{</span><span class="n">structure_replace</span><span class="o">.</span><span class="n">volume</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Simetría despues de cambiar átomo 2 (Ca2+) por un átomo de Hf: </span><span class="si">{</span><span class="n">simmetry_Hf</span><span class="o">.</span><span class="n">get_crystal_system</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Densidad despues de cambiar átomo 2 (Ca2+) por un átomo de Hf: </span><span class="si">{</span><span class="n">structure_replace</span><span class="o">.</span><span class="n">density</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Grupo espacial despues de cambiar átomo 2 (Ca2+) por un átomo de Hf: </span><span class="si">{</span><span class="n">structure_replace</span><span class="o">.</span><span class="n">get_space_group_info</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Volumen despues de cambiar átomo 2 (Ca2+) por un átomo de Hf: 258.7265007863652
+Simetría despues de cambiar átomo 2 (Ca2+) por un átomo de Hf: monoclinic
+Densidad despues de cambiar átomo 2 (Ca2+) por un átomo de Hf: 5.491430046650587 g cm^-3
+Grupo espacial despues de cambiar átomo 2 (Ca2+) por un átomo de Hf: (&#39;Pm&#39;, 6)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id8">
+<h4><strong>Item #3</strong><a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h4>
+<p>Elimine un átomo arbitrario y muestre la simetría final, además de la nueva densidad y volumen.</p>
+<p>La estructura cuenta con 10 oxígenos, <strong>eliminaremos el átomo numero 8 de la estructura que corresponde al primero de estos oxígenos</strong>, esto es:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">structure_delete</span> <span class="o">=</span> <span class="n">Structure</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="s2">&quot;CaZrO3.cif&quot;</span><span class="p">)</span>
+<span class="n">structure_delete</span><span class="o">.</span><span class="n">remove_sites</span><span class="p">([</span><span class="mi">8</span><span class="p">])</span>
+<span class="n">structure_delete</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>If you see this text, the Crystal Toolkit Jupyter Lab 
+
+extension is not installed. You can install it by running 
+
+&quot;pip install crystaltoolkit-extension&quot; 
+
+from the same environment you run &quot;jupyter lab&quot;. 
+
+This only works in Jupyter Lab 3.x or above.
+
+
+Structure Summary
+Lattice
+    abc : 5.77809678 8.01738023 5.58500572
+ angles : 90.0 90.0 90.0
+ volume : 258.7265007863652
+      A : 5.77809678 0.0 3.538063863395314e-16
+      B : 1.2892930738932681e-15 8.01738023 4.909229518108385e-16
+      C : 0.0 0.0 5.58500572
+    pbc : True True True
+PeriodicSite: Ca0 (Ca2+) (0.3002, 6.013, 5.509) [0.05196, 0.75, 0.9865]
+PeriodicSite: Ca0 (Ca2+) (5.478, 2.004, 0.07564) [0.948, 0.25, 0.01354]
+PeriodicSite: Ca0 (Ca2+) (2.589, 2.004, 2.717) [0.448, 0.25, 0.4865]
+PeriodicSite: Ca0 (Ca2+) (3.189, 6.013, 2.868) [0.552, 0.75, 0.5135]
+PeriodicSite: Zr1 (Zr4+) (0.0, 0.0, 2.793) [0.0, 0.0, 0.5]
+PeriodicSite: Zr1 (Zr4+) (2.889, 0.0, 1.769e-16) [0.5, 0.0, 0.0]
+PeriodicSite: Zr1 (Zr4+) (2.889, 4.009, 4.224e-16) [0.5, 0.5, 0.0]
+PeriodicSite: Zr1 (Zr4+) (6.446e-16, 4.009, 2.793) [0.0, 0.5, 0.5]
+PeriodicSite: O2 (O2-) (4.621, 7.564, 4.481) [0.7997, 0.9434, 0.8024]
+PeriodicSite: O2 (O2-) (1.732, 7.564, 3.896) [0.2997, 0.9434, 0.6976]
+PeriodicSite: O2 (O2-) (4.046, 0.4537, 1.689) [0.7003, 0.05658, 0.3024]
+PeriodicSite: O2 (O2-) (4.046, 3.555, 1.689) [0.7003, 0.4434, 0.3024]
+PeriodicSite: O2 (O2-) (1.732, 4.462, 3.896) [0.2997, 0.5566, 0.6976]
+PeriodicSite: O2 (O2-) (4.621, 4.462, 4.481) [0.7997, 0.5566, 0.8024]
+PeriodicSite: O2 (O2-) (1.157, 3.555, 1.104) [0.2003, 0.4434, 0.1976]
+PeriodicSite: O3 (O2-) (0.2401, 2.004, 3.389) [0.04156, 0.25, 0.6068]
+PeriodicSite: O3 (O2-) (5.538, 6.013, 2.196) [0.9584, 0.75, 0.3932]
+PeriodicSite: O3 (O2-) (2.649, 6.013, 0.5967) [0.4584, 0.75, 0.1068]
+PeriodicSite: O3 (O2-) (3.129, 2.004, 4.988) [0.5416, 0.25, 0.8932]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Escribimos el resultado en archivo <code class="docutils literal notranslate"><span class="pre">.cif</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%capture</span>
+<span class="n">structure_delete</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s2">&quot;DeleteAtom8.cif&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">simmetry_remove</span> <span class="o">=</span> <span class="n">SpacegroupAnalyzer</span><span class="p">(</span><span class="n">structure_delete</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Volumen despues de eliminar el átomo numero 8 (O2-): </span><span class="si">{</span><span class="n">structure_delete</span><span class="o">.</span><span class="n">volume</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Simetría despues de eliminar el átomo numero 8 (O2-): </span><span class="si">{</span><span class="n">simmetry_remove</span><span class="o">.</span><span class="n">get_crystal_system</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Densidad despues de eliminar el átomo numero 8 (O2-): </span><span class="si">{</span><span class="n">structure_delete</span><span class="o">.</span><span class="n">density</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Grupo espacial despues de eliminar el átomo numero 8 (O2-): </span><span class="si">{</span><span class="n">structure_delete</span><span class="o">.</span><span class="n">get_space_group_info</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Volumen despues de eliminar el átomo numero 8 (O2-): 258.7265007863652
+Simetría despues de eliminar el átomo numero 8 (O2-): triclinic
+Densidad despues de eliminar el átomo numero 8 (O2-): 4.500398353920672 g cm^-3
+Grupo espacial despues de eliminar el átomo numero 8 (O2-): (&#39;P1&#39;, 1)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id9">
+<h4><strong>Item #4</strong><a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h4>
+<p>Relice un tabla que resuma los sistemas obtenidos en los enunciados en los numerales 2e y 3. Interprete los resultados.</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Estructuras</p></th>
+<th class="head text-center"><p>Densidad</p></th>
+<th class="head text-center"><p>Volumen</p></th>
+<th class="head text-center"><p>Simetría</p></th>
+<th class="head text-center"><p>Grupo Espacial</p></th>
+<th class="head text-center"><p>Archivo .cif</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>Estructura inicial (structure_ini)</p></td>
+<td class="text-center"><p>4.603084505750543 g cm^-3</p></td>
+<td class="text-center"><p>258.7265007863652</p></td>
+<td class="text-center"><p>Ortorrómbico</p></td>
+<td class="text-center"><p>(‘Pnma’, 62)</p></td>
+<td class="text-center"><p>CaZrO3.cif</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>Estructura átomo movido (structure_move)</p></td>
+<td class="text-center"><p>4.603084505750543 g cm^-3</p></td>
+<td class="text-center"><p>258.7265007863652</p></td>
+<td class="text-center"><p>Triclínico</p></td>
+<td class="text-center"><p>(‘P1’, 1)</p></td>
+<td class="text-center"><p>RemoveAtom7.cif</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>Estructura átomo reemplazado (structure_replace)</p></td>
+<td class="text-center"><p>5.491430046650587 g cm^-3</p></td>
+<td class="text-center"><p>258.7265007863652</p></td>
+<td class="text-center"><p>Monoclínico</p></td>
+<td class="text-center"><p>(‘Pm’, 6)</p></td>
+<td class="text-center"><p>ReplaceAtom2.cif</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>Estructura átomo eliminado (structure_delete)</p></td>
+<td class="text-center"><p>4.500398353920672 g cm^-3</p></td>
+<td class="text-center"><p>258.7265007863652</p></td>
+<td class="text-center"><p>Triclínico</p></td>
+<td class="text-center"><p>(‘P1’, 1)</p></td>
+<td class="text-center"><p>DeleteAtom8.cif</p></td>
+</tr>
+</tbody>
+</table>
+<p>El volumen como vemos, estuvo invariable en todos los casos, esto pudo haber sido gracias a que el volumen de una estructura cristalina está determinado por la disposición de los átomos en la celda unitaria y sus posiciones relativas. Cuando se elimina un átomo, o se cambia por otro, los átomos restantes pueden ajustar sus posiciones para mantener la integridad estructural general del cristal. Por lo que en este caso particular, los volúmenes fueron todos los mismos. Las propiedades electrónicas, optoelectrónicas y físicas de este sí que pueden cambiar pero el volumen puede permanecer, en casos particulares, invariable.</p>
+<p>Al remover o cambiar o mover un átomo, la disposición de estos en la estructura cristalina altera cómo se acomodan, por lo que su simetría y por tanto, su grupo espacial, pueden cambiar. Cuando se extienda periodicamente la celda con alguno de estos “daños” que se dispusieron, esta puede experimentar cambios en sus parámetros de red, ángulos entre ejes, etc. Esto también afecta directamente la simetría cristalina. Además de esto, en el entorno cercano al átomo modificado, eliminado o movido, puede ocurrir una reorganización significativa que afecta la simetría local.</p>
+<p>Recordemos que en un punto anterior se mencionó que la densidad es una función que depende de la masa y el volumen: si el número de átomos cambia, esto afectará el volumen y por tanto su densidad. Si se cambia por ejemplo, un átomo por otro, si tiene más o menos masa que el que había antes, esto afectará la masa total de la estructura y por ende, su densidad. Además, estos cambios en la estructura cristalina, como modificaciones en la geometría de enlace y en los parámetros de red, pueden influir en la densidad. Si los cambios llevan a una estructura más compacta, la densidad puede aumentar, y si la estructura se vuelve más abierta, la densidad puede disminuir.</p>
+</section>
+</section>
+<section id="punto-4">
+<h3><strong>Punto #4</strong><a class="headerlink" href="#punto-4" title="Permalink to this heading">#</a></h3>
+<section id="id10">
+<h4><strong>Item #1</strong><a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h4>
+<p>Ubique en la Tabla Periódica de los Elementos, los metales vecinos al metal de transición de su
+estructura y elija uno de ellos. Utilice como criterio de búsqueda un band gap entre 1.1 y 3.2 eV ó un
+band gap entre 0.4 y 1.0 eV (use solo un rango) para establecer la cantidad de materiales que cumplan
+con ello, y que además se filtre la búsqueda por tipo de estructura (chemsys). Busque materiales con
+similitud composicional a su material inicial. Por ejemplo, si se tiene un óxido de hierro como punto
+de partida (Fe3O4), buscar óxidos de Mn ó Ru ó Co, ó combinaciones entre estos en caso de existir,
+por ejemplo un óxido doble de Mn,Co. Cree un DataFrame con los resultados obtenidos.
+Aclaración: Realice la búsqueda tanto con Pymatgen como con Matminer. Contraste los resultados
+obtenidos respecto a cantidad y tipo de datos generados, elija solo un DataFrame. Explique su
+elección. El Dataset usado en Matminer fue: <strong>Castelli-Perovskites</strong>.</p>
+<p>El vecino que escogimos usando la tabla periódica, fue el <strong>Titanio</strong> ya que se encontraba cerca del Circonio, nuestro metal de transición. Con pymatgen usaremos el siguiente criterio de búsqueda: <strong>Ca-Ti-O</strong> además el gap con el que filtaremos será de <span class="math notranslate nohighlight">\([1.1-3.2]\)</span> eV</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Ti_Ca</span> <span class="o">=</span> <span class="n">mpr</span><span class="o">.</span><span class="n">summary</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">chemsys</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Ca-Ti-O&quot;</span><span class="p">],</span> <span class="n">band_gap</span><span class="o">=</span> <span class="p">[</span><span class="mf">1.1</span><span class="p">,</span> <span class="mf">3.2</span><span class="p">])</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">Ti_Ca</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_5822/528319704.py:1: DeprecationWarning: Accessing summary data through MPRester.summary is deprecated. Please use MPRester.materials.summary instead.
+  Ti_Ca = mpr.summary.search(chemsys=[&quot;Ca-Ti-O&quot;], band_gap= [1.1, 3.2])
+Retrieving SummaryDoc documents: 100%|██████████████████████████████████████████████| 14/14 [00:00&lt;00:00, 112275.82it/s]
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+      <th>8</th>
+      <th>9</th>
+      <th>...</th>
+      <th>64</th>
+      <th>65</th>
+      <th>66</th>
+      <th>67</th>
+      <th>68</th>
+      <th>69</th>
+      <th>70</th>
+      <th>71</th>
+      <th>72</th>
+      <th>73</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>(builder_meta, emmet_version='0.38.6' pymatgen...</td>
+      <td>(nsites, 24)</td>
+      <td>(elements, [Ca, O, Ti])</td>
+      <td>(nelements, 3)</td>
+      <td>(composition, (Ca, Ti, O))</td>
+      <td>(composition_reduced, (Ca, Ti, O))</td>
+      <td>(formula_pretty, Ca3Ti2O7)</td>
+      <td>(formula_anonymous, A2B3C7)</td>
+      <td>(chemsys, Ca-O-Ti)</td>
+      <td>(volume, 287.2813744077432)</td>
+      <td>...</td>
+      <td>(weighted_surface_energy, None)</td>
+      <td>(weighted_work_function, None)</td>
+      <td>(surface_anisotropy, None)</td>
+      <td>(shape_factor, None)</td>
+      <td>(has_reconstructed, None)</td>
+      <td>(possible_species, [Ca2+, Ti4+, O2-])</td>
+      <td>(has_props, [HasProps.substrates, HasProps.dos...</td>
+      <td>(theoretical, False)</td>
+      <td>(database_IDs, {'icsd': ['icsd-86241', 'icsd-6...</td>
+      <td>(fields_not_requested, [])</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>(builder_meta, emmet_version='0.38.6' pymatgen...</td>
+      <td>(nsites, 20)</td>
+      <td>(elements, [Ca, O, Ti])</td>
+      <td>(nelements, 3)</td>
+      <td>(composition, (Ca, Ti, O))</td>
+      <td>(composition_reduced, (Ca, Ti, O))</td>
+      <td>(formula_pretty, CaTiO3)</td>
+      <td>(formula_anonymous, ABC3)</td>
+      <td>(chemsys, Ca-O-Ti)</td>
+      <td>(volume, 224.09973769300066)</td>
+      <td>...</td>
+      <td>(weighted_surface_energy, None)</td>
+      <td>(weighted_work_function, None)</td>
+      <td>(surface_anisotropy, None)</td>
+      <td>(shape_factor, None)</td>
+      <td>(has_reconstructed, None)</td>
+      <td>(possible_species, [Ca2+, O2-, Ti4+])</td>
+      <td>(has_props, [HasProps.magnetism, HasProps.mate...</td>
+      <td>(theoretical, False)</td>
+      <td>(database_IDs, {'icsd': ['icsd-162911', 'icsd-...</td>
+      <td>(fields_not_requested, [])</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>(builder_meta, emmet_version='0.38.6' pymatgen...</td>
+      <td>(nsites, 10)</td>
+      <td>(elements, [Ca, O, Ti])</td>
+      <td>(nelements, 3)</td>
+      <td>(composition, (Ca, Ti, O))</td>
+      <td>(composition_reduced, (Ca, Ti, O))</td>
+      <td>(formula_pretty, CaTiO3)</td>
+      <td>(formula_anonymous, ABC3)</td>
+      <td>(chemsys, Ca-O-Ti)</td>
+      <td>(volume, 112.52875726749468)</td>
+      <td>...</td>
+      <td>(weighted_surface_energy, None)</td>
+      <td>(weighted_work_function, None)</td>
+      <td>(surface_anisotropy, None)</td>
+      <td>(shape_factor, None)</td>
+      <td>(has_reconstructed, None)</td>
+      <td>(possible_species, [O2-, Ti4+, Ca2+])</td>
+      <td>(has_props, [HasProps.xas, HasProps.substrates...</td>
+      <td>(theoretical, True)</td>
+      <td>(database_IDs, {})</td>
+      <td>(fields_not_requested, [])</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>(builder_meta, emmet_version='0.38.6' pymatgen...</td>
+      <td>(nsites, 68)</td>
+      <td>(elements, [Ca, O, Ti])</td>
+      <td>(nelements, 3)</td>
+      <td>(composition, (Ca, Ti, O))</td>
+      <td>(composition_reduced, (Ca, Ti, O))</td>
+      <td>(formula_pretty, Ca4Ti3O10)</td>
+      <td>(formula_anonymous, A3B4C10)</td>
+      <td>(chemsys, Ca-O-Ti)</td>
+      <td>(volume, 818.0110389635466)</td>
+      <td>...</td>
+      <td>(weighted_surface_energy, None)</td>
+      <td>(weighted_work_function, None)</td>
+      <td>(surface_anisotropy, None)</td>
+      <td>(shape_factor, None)</td>
+      <td>(has_reconstructed, None)</td>
+      <td>(possible_species, [Ti4+, Ca2+, O2-])</td>
+      <td>(has_props, [HasProps.materials, HasProps.elec...</td>
+      <td>(theoretical, False)</td>
+      <td>(database_IDs, {'icsd': ['icsd-86242']})</td>
+      <td>(fields_not_requested, [])</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>(builder_meta, emmet_version='0.38.6' pymatgen...</td>
+      <td>(nsites, 7)</td>
+      <td>(elements, [Ca, O, Ti])</td>
+      <td>(nelements, 3)</td>
+      <td>(composition, (Ca, Ti, O))</td>
+      <td>(composition_reduced, (Ca, Ti, O))</td>
+      <td>(formula_pretty, Ca2TiO4)</td>
+      <td>(formula_anonymous, AB2C4)</td>
+      <td>(chemsys, Ca-O-Ti)</td>
+      <td>(volume, 89.0983158449353)</td>
+      <td>...</td>
+      <td>(weighted_surface_energy, None)</td>
+      <td>(weighted_work_function, None)</td>
+      <td>(surface_anisotropy, None)</td>
+      <td>(shape_factor, None)</td>
+      <td>(has_reconstructed, None)</td>
+      <td>(possible_species, [Ti4+, Ca2+, O2-])</td>
+      <td>(has_props, [HasProps.dos, HasProps.oxi_states...</td>
+      <td>(theoretical, True)</td>
+      <td>(database_IDs, {})</td>
+      <td>(fields_not_requested, [])</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>(builder_meta, emmet_version='0.38.6' pymatgen...</td>
+      <td>(nsites, 10)</td>
+      <td>(elements, [Ca, O, Ti])</td>
+      <td>(nelements, 3)</td>
+      <td>(composition, (Ca, Ti, O))</td>
+      <td>(composition_reduced, (Ca, Ti, O))</td>
+      <td>(formula_pretty, CaTiO3)</td>
+      <td>(formula_anonymous, ABC3)</td>
+      <td>(chemsys, Ca-O-Ti)</td>
+      <td>(volume, 112.41312515722095)</td>
+      <td>...</td>
+      <td>(weighted_surface_energy, None)</td>
+      <td>(weighted_work_function, None)</td>
+      <td>(surface_anisotropy, None)</td>
+      <td>(shape_factor, None)</td>
+      <td>(has_reconstructed, None)</td>
+      <td>(possible_species, [Ca2+, O2-, Ti4+])</td>
+      <td>(has_props, [HasProps.materials, HasProps.oxi_...</td>
+      <td>(theoretical, False)</td>
+      <td>(database_IDs, {'icsd': ['icsd-162919', 'icsd-...</td>
+      <td>(fields_not_requested, [])</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>(builder_meta, emmet_version='0.38.6' pymatgen...</td>
+      <td>(nsites, 13)</td>
+      <td>(elements, [Ca, O, Ti])</td>
+      <td>(nelements, 3)</td>
+      <td>(composition, (Ca, Ti, O))</td>
+      <td>(composition_reduced, (Ca, Ti, O))</td>
+      <td>(formula_pretty, Ca2Ti3O8)</td>
+      <td>(formula_anonymous, A2B3C8)</td>
+      <td>(chemsys, Ca-O-Ti)</td>
+      <td>(volume, 160.77123140841795)</td>
+      <td>...</td>
+      <td>(weighted_surface_energy, None)</td>
+      <td>(weighted_work_function, None)</td>
+      <td>(surface_anisotropy, None)</td>
+      <td>(shape_factor, None)</td>
+      <td>(has_reconstructed, None)</td>
+      <td>(possible_species, [O2-, Ca2+, Ti4+])</td>
+      <td>(has_props, [HasProps.magnetism, HasProps.elec...</td>
+      <td>(theoretical, True)</td>
+      <td>(database_IDs, {})</td>
+      <td>(fields_not_requested, [])</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>(builder_meta, emmet_version='0.38.6' pymatgen...</td>
+      <td>(nsites, 44)</td>
+      <td>(elements, [Ca, O, Ti])</td>
+      <td>(nelements, 3)</td>
+      <td>(composition, (Ca, Ti, O))</td>
+      <td>(composition_reduced, (Ca, Ti, O))</td>
+      <td>(formula_pretty, CaTi3O7)</td>
+      <td>(formula_anonymous, AB3C7)</td>
+      <td>(chemsys, Ca-O-Ti)</td>
+      <td>(volume, 630.6977197009498)</td>
+      <td>...</td>
+      <td>(weighted_surface_energy, None)</td>
+      <td>(weighted_work_function, None)</td>
+      <td>(surface_anisotropy, None)</td>
+      <td>(shape_factor, None)</td>
+      <td>(has_reconstructed, None)</td>
+      <td>(possible_species, [Ca2+, O2-, Ti4+])</td>
+      <td>(has_props, [HasProps.dos, HasProps.substrates...</td>
+      <td>(theoretical, True)</td>
+      <td>(database_IDs, {})</td>
+      <td>(fields_not_requested, [])</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>(builder_meta, emmet_version='0.38.6' pymatgen...</td>
+      <td>(nsites, 28)</td>
+      <td>(elements, [Ca, O, Ti])</td>
+      <td>(nelements, 3)</td>
+      <td>(composition, (Ca, Ti, O))</td>
+      <td>(composition_reduced, (Ca, Ti, O))</td>
+      <td>(formula_pretty, CaTi4O9)</td>
+      <td>(formula_anonymous, AB4C9)</td>
+      <td>(chemsys, Ca-O-Ti)</td>
+      <td>(volume, 379.83127387058084)</td>
+      <td>...</td>
+      <td>(weighted_surface_energy, None)</td>
+      <td>(weighted_work_function, None)</td>
+      <td>(surface_anisotropy, None)</td>
+      <td>(shape_factor, None)</td>
+      <td>(has_reconstructed, None)</td>
+      <td>(possible_species, [Ti4+, Ca2+, O2-])</td>
+      <td>(has_props, [HasProps.materials, HasProps.oxi_...</td>
+      <td>(theoretical, True)</td>
+      <td>(database_IDs, {})</td>
+      <td>(fields_not_requested, [])</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>(builder_meta, emmet_version='0.38.6' pymatgen...</td>
+      <td>(nsites, 20)</td>
+      <td>(elements, [Ca, O, Ti])</td>
+      <td>(nelements, 3)</td>
+      <td>(composition, (Ca, Ti, O))</td>
+      <td>(composition_reduced, (Ca, Ti, O))</td>
+      <td>(formula_pretty, CaTiO3)</td>
+      <td>(formula_anonymous, ABC3)</td>
+      <td>(chemsys, Ca-O-Ti)</td>
+      <td>(volume, 225.02899171175915)</td>
+      <td>...</td>
+      <td>(weighted_surface_energy, None)</td>
+      <td>(weighted_work_function, None)</td>
+      <td>(surface_anisotropy, None)</td>
+      <td>(shape_factor, None)</td>
+      <td>(has_reconstructed, None)</td>
+      <td>(possible_species, [O2-, Ti4+, Ca2+])</td>
+      <td>(has_props, [HasProps.oxi_states, HasProps.ele...</td>
+      <td>(theoretical, False)</td>
+      <td>(database_IDs, {'icsd': ['icsd-38212', 'icsd-2...</td>
+      <td>(fields_not_requested, [])</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>(builder_meta, emmet_version='0.38.6' pymatgen...</td>
+      <td>(nsites, 26)</td>
+      <td>(elements, [Ca, O, Ti])</td>
+      <td>(nelements, 3)</td>
+      <td>(composition, (Ca, Ti, O))</td>
+      <td>(composition_reduced, (Ca, Ti, O))</td>
+      <td>(formula_pretty, Ca2Ti3O8)</td>
+      <td>(formula_anonymous, A2B3C8)</td>
+      <td>(chemsys, Ca-O-Ti)</td>
+      <td>(volume, 341.4029041034518)</td>
+      <td>...</td>
+      <td>(weighted_surface_energy, None)</td>
+      <td>(weighted_work_function, None)</td>
+      <td>(surface_anisotropy, None)</td>
+      <td>(shape_factor, None)</td>
+      <td>(has_reconstructed, None)</td>
+      <td>(possible_species, [O2-, Ti4+, Ca2+])</td>
+      <td>(has_props, [HasProps.materials, HasProps.band...</td>
+      <td>(theoretical, True)</td>
+      <td>(database_IDs, {})</td>
+      <td>(fields_not_requested, [])</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>(builder_meta, emmet_version='0.38.6' pymatgen...</td>
+      <td>(nsites, 5)</td>
+      <td>(elements, [Ca, O, Ti])</td>
+      <td>(nelements, 3)</td>
+      <td>(composition, (Ca, Ti, O))</td>
+      <td>(composition_reduced, (Ca, Ti, O))</td>
+      <td>(formula_pretty, CaTiO3)</td>
+      <td>(formula_anonymous, ABC3)</td>
+      <td>(chemsys, Ca-O-Ti)</td>
+      <td>(volume, 58.83985762289643)</td>
+      <td>...</td>
+      <td>(weighted_surface_energy, None)</td>
+      <td>(weighted_work_function, None)</td>
+      <td>(surface_anisotropy, None)</td>
+      <td>(shape_factor, None)</td>
+      <td>(has_reconstructed, None)</td>
+      <td>(possible_species, [Ti4+, Ca2+, O2-])</td>
+      <td>(has_props, [HasProps.xas, HasProps.charge_den...</td>
+      <td>(theoretical, False)</td>
+      <td>(database_IDs, {'icsd': ['icsd-31864', 'icsd-1...</td>
+      <td>(fields_not_requested, [])</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>(builder_meta, emmet_version='0.38.6' pymatgen...</td>
+      <td>(nsites, 16)</td>
+      <td>(elements, [Ca, O, Ti])</td>
+      <td>(nelements, 3)</td>
+      <td>(composition, (Ca, Ti, O))</td>
+      <td>(composition_reduced, (Ca, Ti, O))</td>
+      <td>(formula_pretty, CaTi2O5)</td>
+      <td>(formula_anonymous, AB2C5)</td>
+      <td>(chemsys, Ca-O-Ti)</td>
+      <td>(volume, 205.68196780875334)</td>
+      <td>...</td>
+      <td>(weighted_surface_energy, None)</td>
+      <td>(weighted_work_function, None)</td>
+      <td>(surface_anisotropy, None)</td>
+      <td>(shape_factor, None)</td>
+      <td>(has_reconstructed, None)</td>
+      <td>(possible_species, [O2-, Ca2+, Ti4+])</td>
+      <td>(has_props, [HasProps.thermo, HasProps.magneti...</td>
+      <td>(theoretical, True)</td>
+      <td>(database_IDs, {})</td>
+      <td>(fields_not_requested, [])</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>(builder_meta, emmet_version='0.38.6' pymatgen...</td>
+      <td>(nsites, 16)</td>
+      <td>(elements, [Ca, O, Ti])</td>
+      <td>(nelements, 3)</td>
+      <td>(composition, (Ca, Ti, O))</td>
+      <td>(composition_reduced, (Ca, Ti, O))</td>
+      <td>(formula_pretty, CaTi2O5)</td>
+      <td>(formula_anonymous, AB2C5)</td>
+      <td>(chemsys, Ca-O-Ti)</td>
+      <td>(volume, 243.64501410648234)</td>
+      <td>...</td>
+      <td>(weighted_surface_energy, None)</td>
+      <td>(weighted_work_function, None)</td>
+      <td>(surface_anisotropy, None)</td>
+      <td>(shape_factor, None)</td>
+      <td>(has_reconstructed, None)</td>
+      <td>(possible_species, [O2-, Ca2+, Ti4+])</td>
+      <td>(has_props, [HasProps.thermo, HasProps.provena...</td>
+      <td>(theoretical, True)</td>
+      <td>(database_IDs, {})</td>
+      <td>(fields_not_requested, [])</td>
+    </tr>
+  </tbody>
+</table>
+<p>14 rows × 74 columns</p>
+</div></div></div>
+</div>
+<p>Ahora realiando una búsqueda parecida con <strong>Matminer</strong>. Primero miremos que datasets tiene este:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">get_available_datasets</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>boltztrap_mp: Effective mass and thermoelectric properties of 8924 compounds in The  Materials Project database that are calculated by the BoltzTraP software package run on the GGA-PBE or GGA+U density functional theory calculation results. The properties are reported at the temperature of 300 Kelvin and the carrier concentration of 1e18 1/cm3.
+
+brgoch_superhard_training: 2574 materials used for training regressors that predict shear and bulk modulus.
+
+castelli_perovskites: 18,928 perovskites generated with ABX combinatorics, calculating gllbsc band gap and pbe structure, and also reporting absolute band edge positions and heat of formation.
+
+citrine_thermal_conductivity: Thermal conductivity of 872 compounds measured experimentally and retrieved from Citrine database from various references. The reported values are measured at various temperatures of which 295 are at room temperature.
+
+dielectric_constant: 1,056 structures with dielectric properties, calculated with DFPT-PBE.
+
+double_perovskites_gap: Band gap of 1306 double perovskites (a_1-b_1-a_2-b_2-O6) calculated using ﻿Gritsenko, van Leeuwen, van Lenthe and Baerends potential (gllbsc) in GPAW.
+
+double_perovskites_gap_lumo: Supplementary lumo data of 55 atoms for the double_perovskites_gap dataset.
+
+elastic_tensor_2015: 1,181 structures with elastic properties calculated with DFT-PBE.
+
+expt_formation_enthalpy: Experimental formation enthalpies for inorganic compounds, collected from years of calorimetric experiments. There are 1,276 entries in this dataset, mostly binary compounds. Matching mpids or oqmdids as well as the DFT-computed formation energies are also added (if any).
+
+expt_formation_enthalpy_kingsbury: Dataset containing experimental standard formation enthalpies for solids. Formation enthalpies were compiled primarily from Kim et al., Kubaschewski, and the NIST JANAF tables (see references). Elements, liquids, and gases were excluded. Data were deduplicated such that each material is associated with a single formation enthalpy value. Refer to Wang et al. (see references) for a complete desciption of the methods used. Materials Project database IDs (mp-ids) were assigned to materials from among computed materials in the Materials Project database (version 2021.03.22) that were 1) not marked &#39;theoretical&#39;, 2) had structures matching at least one ICSD material, and 3) were within 200 meV of the DFT-computed stable energy hull (e_above_hull &lt; 0.2 eV). Among these candidates, we chose the mp-id with the lowest e_above_hull that matched the reported spacegroup (where available).
+
+expt_gap: Experimental band gap of 6354 inorganic semiconductors.
+
+expt_gap_kingsbury: Identical to the matbench_expt_gap dataset, except that Materials Project database IDs (mp-ids) have been associated with each material using the same method as described for the expt_formation_enthalpy_kingsbury dataset. Columns have also been renamed for consistency with the formation enthalpy data.
+
+flla: 3938 structures and computed formation energies from &quot;Crystal Structure Representations for Machine Learning Models of Formation Energies.&quot;
+
+glass_binary: Metallic glass formation data for binary alloys, collected from various experimental techniques such as melt-spinning or mechanical alloying. This dataset covers all compositions with an interval of 5 at. % in 59 binary systems, containing a total of 5959 alloys in the dataset. The target property of this dataset is the glass forming ability (GFA), i.e. whether the composition can form monolithic glass or not, which is either 1 for glass forming or 0 for non-full glass forming.
+
+glass_binary_v2: Identical to glass_binary dataset, but with duplicate entries merged. If there was a disagreement in gfa when merging the class was defaulted to 1.
+
+glass_ternary_hipt: Metallic glass formation dataset for ternary alloys, collected from the high-throughput sputtering experiments measuring whether it is possible to form a glass using sputtering. The hipt experimental data are of the Co-Fe-Zr, Co-Ti-Zr, Co-V-Zr and Fe-Ti-Nb ternary systems.
+
+glass_ternary_landolt: Metallic glass formation dataset for ternary alloys, collected from the &quot;Nonequilibrium Phase Diagrams of Ternary Amorphous Alloys,’ a volume of the Landolt– Börnstein collection. This dataset contains experimental measurements of whether it is possible to form a glass using a variety of processing techniques at thousands of compositions from hundreds of ternary systems. The processing techniques are designated in the &quot;processing&quot; column. There are originally 7191 experiments in this dataset, will be reduced to 6203 after deduplicated, and will be further reduced to 6118 if combining multiple data for one composition. There are originally 6780 melt-spinning experiments in this dataset, will be reduced to 5800 if deduplicated, and will be further reduced to 5736 if combining multiple experimental data for one composition.
+
+heusler_magnetic: 1153 Heusler alloys with DFT-calculated magnetic and electronic properties. The 1153 alloys include 576 full, 449 half and 128 inverse Heusler alloys. The data are extracted and cleaned (including de-duplicating) from Citrine.
+
+jarvis_dft_2d: Various properties of 636 2D materials computed with the OptB88vdW and TBmBJ functionals taken from the JARVIS DFT database.
+
+jarvis_dft_3d: Various properties of 25,923 bulk materials computed with the OptB88vdW and TBmBJ functionals taken from the JARVIS DFT database.
+
+jarvis_ml_dft_training: Various properties of 24,759 bulk and 2D materials computed with the OptB88vdW and TBmBJ functionals taken from the JARVIS DFT database.
+
+m2ax: Elastic properties of 223 stable M2AX compounds from &quot;A comprehensive survey of M2AX phase elastic properties&quot; by Cover et al. Calculations are PAW PW91.
+
+matbench_dielectric: Matbench v0.1 test dataset for predicting refractive index from structure. Adapted from Materials Project database. Removed entries having a formation energy (or energy above the convex hull) more than 150meV and those having refractive indices less than 1 and those containing noble gases. Retrieved April 2, 2019. For benchmarking w/ nested cross validation, the order of the dataset must be identical to the retrieved data; refer to the Automatminer/Matbench publication for more details.
+
+matbench_expt_gap: Matbench v0.1 test dataset for predicting experimental band gap from composition alone. Retrieved from Zhuo et al. supplementary information. Deduplicated according to composition, removing compositions with reported band gaps spanning more than a 0.1eV range; remaining compositions were assigned values based on the closest experimental value to the mean experimental value for that composition among all reports. For benchmarking w/ nested cross validation, the order of the dataset must be identical to the retrieved data; refer to the Automatminer/Matbench publication for more details.
+
+matbench_expt_is_metal: Matbench v0.1 test dataset for classifying metallicity from composition alone. Retrieved from Zhuo et al. supplementary information. Deduplicated according to composition, ensuring no conflicting reports were entered for any compositions (i.e., no reported compositions were both metal and nonmetal). For benchmarking w/ nested cross validation, the order of the dataset must be identical to the retrieved data; refer to the Automatminer/Matbench publication for more details.
+
+matbench_glass: Matbench v0.1 test dataset for predicting full bulk metallic glass formation ability from chemical formula. Retrieved from &quot;Nonequilibrium Phase Diagrams of Ternary Amorphous Alloys,’ a volume of the Landolt– Börnstein collection. Deduplicated according to composition, ensuring no compositions were reported as both GFA and not GFA (i.e., all reports agreed on the classification designation). For benchmarking w/ nested cross validation, the order of the dataset must be identical to the retrieved data; refer to the Automatminer/Matbench publication for more details.
+
+matbench_jdft2d: Matbench v0.1 test dataset for predicting exfoliation energies from crystal structure (computed with the OptB88vdW and TBmBJ functionals). Adapted from the JARVIS DFT database. For benchmarking w/ nested cross validation, the order of the dataset must be identical to the retrieved data; refer to the Automatminer/Matbench publication for more details.
+
+matbench_log_gvrh: Matbench v0.1 test dataset for predicting DFT log10 VRH-average shear modulus from structure. Adapted from Materials Project database. Removed entries having a formation energy (or energy above the convex hull) more than 150meV and those having negative G_Voigt, G_Reuss, G_VRH, K_Voigt, K_Reuss, or K_VRH and those failing G_Reuss &lt;= G_VRH &lt;= G_Voigt or K_Reuss &lt;= K_VRH &lt;= K_Voigt and those containing noble gases. Retrieved April 2, 2019. For benchmarking w/ nested cross validation, the order of the dataset must be identical to the retrieved data; refer to the Automatminer/Matbench publication for more details.
+
+matbench_log_kvrh: Matbench v0.1 test dataset for predicting DFT log10 VRH-average bulk modulus from structure. Adapted from Materials Project database. Removed entries having a formation energy (or energy above the convex hull) more than 150meV and those having negative G_Voigt, G_Reuss, G_VRH, K_Voigt, K_Reuss, or K_VRH and those failing G_Reuss &lt;= G_VRH &lt;= G_Voigt or K_Reuss &lt;= K_VRH &lt;= K_Voigt and those containing noble gases. Retrieved April 2, 2019. For benchmarking w/ nested cross validation, the order of the dataset must be identical to the retrieved data; refer to the Automatminer/Matbench publication for more details.
+
+matbench_mp_e_form: Matbench v0.1 test dataset for predicting DFT formation energy from structure. Adapted from Materials Project database. Removed entries having formation energy more than 2.5eV and those containing noble gases. Retrieved April 2, 2019. For benchmarking w/ nested cross validation, the order of the dataset must be identical to the retrieved data; refer to the Automatminer/Matbench publication for more details.
+
+matbench_mp_gap: Matbench v0.1 test dataset for predicting DFT PBE band gap from structure. Adapted from Materials Project database. Removed entries having a formation energy (or energy above the convex hull) more than 150meV and those containing noble gases. Retrieved April 2, 2019. For benchmarking w/ nested cross validation, the order of the dataset must be identical to the retrieved data; refer to the Automatminer/Matbench publication for more details.
+
+matbench_mp_is_metal: Matbench v0.1 test dataset for predicting DFT metallicity from structure. Adapted from Materials Project database. Removed entries having a formation energy (or energy above the convex hull) more than 150meV and those containing noble gases. Retrieved April 2, 2019. For benchmarking w/ nested cross validation, the order of the dataset must be identical to the retrieved data; refer to the Automatminer/Matbench publication for more details.
+
+matbench_perovskites: Matbench v0.1 test dataset for predicting formation energy from crystal structure. Adapted from an original dataset generated by Castelli et al. For benchmarking w/ nested cross validation, the order of the dataset must be identical to the retrieved data; refer to the Automatminer/Matbench publication for more details.
+
+matbench_phonons: Matbench v0.1 test dataset for predicting vibration properties from crystal structure. Original data retrieved from Petretto et al. Original calculations done via ABINIT in the harmonic approximation based on density functional perturbation theory. Removed entries having a formation energy (or energy above the convex hull) more than 150meV. For benchmarking w/ nested cross validation, the order of the dataset must be identical to the retrieved data; refer to the Automatminer/Matbench publication for more details.
+
+matbench_steels: Matbench v0.1 test dataset for predicting steel yield strengths from chemical composition alone. Retrieved from Citrine informatics. Deduplicated. For benchmarking w/ nested cross validation, the order of the dataset must be identical to the retrieved data; refer to the Automatminer/Matbench publication for more details.
+
+mp_all_20181018: A complete copy of the Materials Project database as of 10/18/2018. mp_all files contain structure data for each material while mp_nostruct does not.
+
+mp_nostruct_20181018: A complete copy of the Materials Project database as of 10/18/2018. mp_all files contain structure data for each material while mp_nostruct does not.
+
+phonon_dielectric_mp: Phonon (lattice/atoms vibrations) and dielectric properties of 1296 compounds computed via ABINIT software package in the harmonic approximation based on density functional perturbation theory.
+
+piezoelectric_tensor: 941 structures with piezoelectric properties, calculated with DFT-PBE.
+
+ricci_boltztrap_mp_tabular: Ab-initio electronic transport database for inorganic materials. Complex multivariable BoltzTraP simulation data is condensed down into tabular form of two main motifs: average eigenvalues at set moderate carrier concentrations and temperatures, and optimal values among all carrier concentrations and temperatures within certain ranges. Here are reported the average of the eigenvalues of conductivity effective mass (mₑᶜᵒⁿᵈ), the Seebeck coefficient (S), the conductivity (σ), the electronic thermal conductivity (κₑ), and the Power Factor (PF) at a doping level of 10¹⁸ cm⁻³ and at a temperature of 300 K for n- and p-type. Also, the maximum values for S, σ, PF, and the minimum value for κₑ chosen among the temperatures [100, 1300] K, the doping levels [10¹⁶, 10²¹] cm⁻³, and doping types are reported. The properties that depend on the relaxation time are reported divided by the constant value 10⁻¹⁴. The average of the eigenvalues for all the properties at all the temperatures, doping levels, and doping types are reported in the tables for each entry. Data is indexed by materials project id (mpid)
+
+steel_strength: 312 steels with experimental yield strength and ultimate tensile strength, extracted and cleaned (including de-duplicating) from Citrine.
+
+superconductivity2018: Dataset of ~16,000 experimental superconductivity records (critical temperatures) from Stanev et al., originally from the Japanese National Institute for Materials Science. Does not include structural data. Includes ~300 measurements from materials found without superconductivity (Tc=0). No modifications were made to the core dataset, aside from basic file type change to json for (un)packaging with matminer. Reproduced under the Creative Commons 4.0 license, which can be found here: http://creativecommons.org/licenses/by/4.0/.
+
+tholander_nitrides: A challenging data set for quantum machine learning containing a diverse set of 12.8k polymorphs in the Zn-Ti-N, Zn-Zr-N and Zn-Hf-N chemical systems. The phase diagrams of the Ti-Zn-N, Zr-Zn-N, and Hf-Zn-N systems are determined using large-scale high-throughput density functional calculations (DFT-GGA) (PBE). In total 12,815 relaxed structures are shared alongside their energy calculated using the VASP DFT code. The High-Throughput Toolkit was used to manage the calculations. Data adapted and deduplicated from the original data on Zenodo at https://zenodo.org/record/5530535#.YjJ3ZhDMJLQ, published under MIT licence. Collated from separate files of chemical systems and deduplicated according to identical structures matching ht_ids. Prepared in collaboration with Rhys Goodall.
+
+ucsb_thermoelectrics: Database of ~1,100 experimental thermoelectric materials from UCSB aggregated from 108 source publications and personal communications. Downloaded from Citrine. Source UCSB webpage is http://www.mrl.ucsb.edu:8080/datamine/thermoelectric.jsp. See reference for more information on original data aggregation. No duplicate entries are present, but each src may result in multiple measurements of the same materials&#39; properties at different temperatures or conditions.
+
+wolverton_oxides: 4,914 perovskite oxides containing composition data, lattice constants, and formation + vacancy formation energies. All perovskites are of the form ABO3. Adapted from a dataset presented by Emery and Wolverton.
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;boltztrap_mp&#39;,
+ &#39;brgoch_superhard_training&#39;,
+ &#39;castelli_perovskites&#39;,
+ &#39;citrine_thermal_conductivity&#39;,
+ &#39;dielectric_constant&#39;,
+ &#39;double_perovskites_gap&#39;,
+ &#39;double_perovskites_gap_lumo&#39;,
+ &#39;elastic_tensor_2015&#39;,
+ &#39;expt_formation_enthalpy&#39;,
+ &#39;expt_formation_enthalpy_kingsbury&#39;,
+ &#39;expt_gap&#39;,
+ &#39;expt_gap_kingsbury&#39;,
+ &#39;flla&#39;,
+ &#39;glass_binary&#39;,
+ &#39;glass_binary_v2&#39;,
+ &#39;glass_ternary_hipt&#39;,
+ &#39;glass_ternary_landolt&#39;,
+ &#39;heusler_magnetic&#39;,
+ &#39;jarvis_dft_2d&#39;,
+ &#39;jarvis_dft_3d&#39;,
+ &#39;jarvis_ml_dft_training&#39;,
+ &#39;m2ax&#39;,
+ &#39;matbench_dielectric&#39;,
+ &#39;matbench_expt_gap&#39;,
+ &#39;matbench_expt_is_metal&#39;,
+ &#39;matbench_glass&#39;,
+ &#39;matbench_jdft2d&#39;,
+ &#39;matbench_log_gvrh&#39;,
+ &#39;matbench_log_kvrh&#39;,
+ &#39;matbench_mp_e_form&#39;,
+ &#39;matbench_mp_gap&#39;,
+ &#39;matbench_mp_is_metal&#39;,
+ &#39;matbench_perovskites&#39;,
+ &#39;matbench_phonons&#39;,
+ &#39;matbench_steels&#39;,
+ &#39;mp_all_20181018&#39;,
+ &#39;mp_nostruct_20181018&#39;,
+ &#39;phonon_dielectric_mp&#39;,
+ &#39;piezoelectric_tensor&#39;,
+ &#39;ricci_boltztrap_mp_tabular&#39;,
+ &#39;steel_strength&#39;,
+ &#39;superconductivity2018&#39;,
+ &#39;tholander_nitrides&#39;,
+ &#39;ucsb_thermoelectrics&#39;,
+ &#39;wolverton_oxides&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">castelli_dataset</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;castelli_perovskites&quot;</span><span class="p">,</span> <span class="n">data_home</span><span class="o">=</span><span class="s2">&quot;.&quot;</span><span class="p">)</span>
+<span class="n">castelli_dataset</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fetching castelli_perovskites.json.gz from https://ndownloader.figshare.com/files/13284197 to ./castelli_perovskites.json.gz
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fetching https://ndownloader.figshare.com/files/13284197 in MB: 4.9479679999999995MB [00:00, 478.44MB/s]                
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>fermi level</th>
+      <th>fermi width</th>
+      <th>e_form</th>
+      <th>gap is direct</th>
+      <th>structure</th>
+      <th>mu_b</th>
+      <th>formula</th>
+      <th>vbm</th>
+      <th>cbm</th>
+      <th>gap gllbsc</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.312138</td>
+      <td>0.001837</td>
+      <td>2.16</td>
+      <td>True</td>
+      <td>[[0. 0. 0.] Rh, [1.97726555 1.97726555 1.97726...</td>
+      <td>1.974478e-02</td>
+      <td>RhTeN3</td>
+      <td>6.187694</td>
+      <td>6.187694</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.297083</td>
+      <td>0.001837</td>
+      <td>1.52</td>
+      <td>True</td>
+      <td>[[2.54041798 0.         0.        ] Hf, [1.020...</td>
+      <td>-2.253054e-05</td>
+      <td>HfTeO3</td>
+      <td>6.033125</td>
+      <td>6.033125</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.191139</td>
+      <td>0.003675</td>
+      <td>1.48</td>
+      <td>True</td>
+      <td>[[0.60790913 0.         0.        ] Re, [2.186...</td>
+      <td>4.982109e+00</td>
+      <td>ReAsO2F</td>
+      <td>6.602253</td>
+      <td>6.602253</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.316346</td>
+      <td>0.001837</td>
+      <td>1.24</td>
+      <td>True</td>
+      <td>[[2.83091357 0.         0.        ] W, [2.6573...</td>
+      <td>-8.684496e-01</td>
+      <td>WReO2S</td>
+      <td>5.738462</td>
+      <td>5.738462</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.312658</td>
+      <td>0.003675</td>
+      <td>0.62</td>
+      <td>True</td>
+      <td>[[0.00518937 0.         0.        ] Bi, [2.172...</td>
+      <td>2.164069e-15</td>
+      <td>BiHfO2F</td>
+      <td>6.074736</td>
+      <td>6.074736</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>18923</th>
+      <td>0.123028</td>
+      <td>0.001837</td>
+      <td>1.66</td>
+      <td>True</td>
+      <td>[[4.44077598 0.         0.        ] Rb, [2.652...</td>
+      <td>1.566419e+00</td>
+      <td>RbPdO2S</td>
+      <td>5.164060</td>
+      <td>5.164060</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>18924</th>
+      <td>0.081229</td>
+      <td>0.001837</td>
+      <td>2.12</td>
+      <td>True</td>
+      <td>[[4.56913824e-03 7.21569024e-19 0.00000000e+00...</td>
+      <td>1.993566e+00</td>
+      <td>LiBaO2N</td>
+      <td>5.062501</td>
+      <td>5.062501</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>18925</th>
+      <td>0.189810</td>
+      <td>0.003675</td>
+      <td>1.50</td>
+      <td>True</td>
+      <td>[[0.0040044 0.        0.       ] Zn, [1.821570...</td>
+      <td>1.599586e+00</td>
+      <td>ZnBeOFN</td>
+      <td>6.589724</td>
+      <td>6.589724</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>18926</th>
+      <td>0.209947</td>
+      <td>0.001837</td>
+      <td>2.48</td>
+      <td>True</td>
+      <td>[[0. 0. 0.] Ca, [2.16744896 2.16744896 2.16744...</td>
+      <td>3.280734e+00</td>
+      <td>CaTlN3</td>
+      <td>5.411525</td>
+      <td>5.411525</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>18927</th>
+      <td>0.234465</td>
+      <td>0.001837</td>
+      <td>1.06</td>
+      <td>True</td>
+      <td>[[1.23999712 4.09195837 4.09195837] Al, [2.500...</td>
+      <td>-3.202471e-01</td>
+      <td>AlSnO3</td>
+      <td>5.676383</td>
+      <td>5.676383</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>18928 rows × 10 columns</p>
+</div></div></div>
+</div>
+<p>Realizaremos el siguiente filtro: primero osbervaremos si la estructura original de la Perovskita se encuentra, es decir, <span class="math notranslate nohighlight">\(CaZrO_{3}\)</span> con el fin de observar si es la misma que brinda materials project o si es otra diferente, esto es:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">castelli_dataset</span> <span class="p">[</span> <span class="p">(</span><span class="n">castelli_dataset</span><span class="p">[</span><span class="s2">&quot;formula&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;CaZrO3&quot;</span><span class="p">)</span> <span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>fermi level</th>
+      <th>fermi width</th>
+      <th>e_form</th>
+      <th>gap is direct</th>
+      <th>structure</th>
+      <th>mu_b</th>
+      <th>formula</th>
+      <th>vbm</th>
+      <th>cbm</th>
+      <th>gap gllbsc</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>8811</th>
+      <td>0.268427</td>
+      <td>0.001837</td>
+      <td>0.02</td>
+      <td>False</td>
+      <td>[[6.85422118e-03 0.00000000e+00 9.12337945e-19...</td>
+      <td>0.00034</td>
+      <td>CaZrO3</td>
+      <td>8.35575</td>
+      <td>1.82575</td>
+      <td>6.5</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Como vemos, encontramos una parecida pero no la misma, dado que la que aparece en materiasl project tiene <strong>gap directo</strong> y esta no. Observaremos entonces otro tipo de búsqueda. Probemos con <strong>Ca-Ti-O3</strong>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">castelli_dataset</span> <span class="p">[</span> <span class="p">(</span><span class="n">castelli_dataset</span><span class="p">[</span><span class="s2">&quot;formula&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;CaTiO3&quot;</span><span class="p">)</span> <span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>fermi level</th>
+      <th>fermi width</th>
+      <th>e_form</th>
+      <th>gap is direct</th>
+      <th>structure</th>
+      <th>mu_b</th>
+      <th>formula</th>
+      <th>vbm</th>
+      <th>cbm</th>
+      <th>gap gllbsc</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>7079</th>
+      <td>0.262047</td>
+      <td>0.001837</td>
+      <td>-0.12</td>
+      <td>False</td>
+      <td>[[0.29328069 0.         0.        ] Ca, [2.061...</td>
+      <td>-0.000159</td>
+      <td>CaTiO3</td>
+      <td>7.191459</td>
+      <td>2.881459</td>
+      <td>4.3</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Realizando una búsqueda más con pymatgen, añadiremos el filtro de <strong><code class="docutils literal notranslate"><span class="pre">is_gap_direct</span></code></strong> con el fin de que se muestre una estructura aún más parecida a la original. El gap de la perovskita <span class="math notranslate nohighlight">\(CaZrO_{3}\)</span> es directo, por lo tanto pondremos el booleano <strong><code class="docutils literal notranslate"><span class="pre">True</span></code></strong> en este parámetro. Esto es:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Ti_py</span> <span class="o">=</span> <span class="n">mpr</span><span class="o">.</span><span class="n">summary</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">chemsys</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Ca-Ti-O&quot;</span><span class="p">],</span> <span class="n">band_gap</span><span class="o">=</span> <span class="p">[</span><span class="mf">1.1</span><span class="p">,</span> <span class="mf">3.2</span><span class="p">],</span> <span class="n">is_gap_direct</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">Ti_py</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_5822/241922621.py:1: DeprecationWarning: Accessing summary data through MPRester.summary is deprecated. Please use MPRester.materials.summary instead.
+  Ti_py = mpr.summary.search(chemsys=[&quot;Ca-Ti-O&quot;], band_gap= [1.1, 3.2], is_gap_direct = True)
+Retrieving SummaryDoc documents: 100%|█████████████████████████████████████████████████| 3/3 [00:00&lt;00:00, 22114.08it/s]
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+      <th>8</th>
+      <th>9</th>
+      <th>...</th>
+      <th>64</th>
+      <th>65</th>
+      <th>66</th>
+      <th>67</th>
+      <th>68</th>
+      <th>69</th>
+      <th>70</th>
+      <th>71</th>
+      <th>72</th>
+      <th>73</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>(builder_meta, emmet_version='0.38.6' pymatgen...</td>
+      <td>(nsites, 20)</td>
+      <td>(elements, [Ca, O, Ti])</td>
+      <td>(nelements, 3)</td>
+      <td>(composition, (Ca, Ti, O))</td>
+      <td>(composition_reduced, (Ca, Ti, O))</td>
+      <td>(formula_pretty, CaTiO3)</td>
+      <td>(formula_anonymous, ABC3)</td>
+      <td>(chemsys, Ca-O-Ti)</td>
+      <td>(volume, 224.09973769300066)</td>
+      <td>...</td>
+      <td>(weighted_surface_energy, None)</td>
+      <td>(weighted_work_function, None)</td>
+      <td>(surface_anisotropy, None)</td>
+      <td>(shape_factor, None)</td>
+      <td>(has_reconstructed, None)</td>
+      <td>(possible_species, [Ca2+, O2-, Ti4+])</td>
+      <td>(has_props, [HasProps.magnetism, HasProps.mate...</td>
+      <td>(theoretical, False)</td>
+      <td>(database_IDs, {'icsd': ['icsd-162911', 'icsd-...</td>
+      <td>(fields_not_requested, [])</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>(builder_meta, emmet_version='0.38.6' pymatgen...</td>
+      <td>(nsites, 28)</td>
+      <td>(elements, [Ca, O, Ti])</td>
+      <td>(nelements, 3)</td>
+      <td>(composition, (Ca, Ti, O))</td>
+      <td>(composition_reduced, (Ca, Ti, O))</td>
+      <td>(formula_pretty, CaTi4O9)</td>
+      <td>(formula_anonymous, AB4C9)</td>
+      <td>(chemsys, Ca-O-Ti)</td>
+      <td>(volume, 379.83127387058084)</td>
+      <td>...</td>
+      <td>(weighted_surface_energy, None)</td>
+      <td>(weighted_work_function, None)</td>
+      <td>(surface_anisotropy, None)</td>
+      <td>(shape_factor, None)</td>
+      <td>(has_reconstructed, None)</td>
+      <td>(possible_species, [Ti4+, Ca2+, O2-])</td>
+      <td>(has_props, [HasProps.materials, HasProps.oxi_...</td>
+      <td>(theoretical, True)</td>
+      <td>(database_IDs, {})</td>
+      <td>(fields_not_requested, [])</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>(builder_meta, emmet_version='0.38.6' pymatgen...</td>
+      <td>(nsites, 16)</td>
+      <td>(elements, [Ca, O, Ti])</td>
+      <td>(nelements, 3)</td>
+      <td>(composition, (Ca, Ti, O))</td>
+      <td>(composition_reduced, (Ca, Ti, O))</td>
+      <td>(formula_pretty, CaTi2O5)</td>
+      <td>(formula_anonymous, AB2C5)</td>
+      <td>(chemsys, Ca-O-Ti)</td>
+      <td>(volume, 205.68196780875334)</td>
+      <td>...</td>
+      <td>(weighted_surface_energy, None)</td>
+      <td>(weighted_work_function, None)</td>
+      <td>(surface_anisotropy, None)</td>
+      <td>(shape_factor, None)</td>
+      <td>(has_reconstructed, None)</td>
+      <td>(possible_species, [O2-, Ca2+, Ti4+])</td>
+      <td>(has_props, [HasProps.thermo, HasProps.magneti...</td>
+      <td>(theoretical, True)</td>
+      <td>(database_IDs, {})</td>
+      <td>(fields_not_requested, [])</td>
+    </tr>
+  </tbody>
+</table>
+<p>3 rows × 74 columns</p>
+</div></div></div>
+</div>
+<p>Acá podemos ver que existe una perovskita con una estructura exactamente con el criterio de búsqueda que le dimos y es
+bastante parecida a la estructura original. Pero estos no serán los que utilizaremos para el item b del 4to punto. Para este se utilizará la base de datos de pymatgen dado que aunque su visualización es un poco menos elegante, la información sobre los materiales que imprima está en la página (base de datos) de Materials Project, la cual es la que hemos usado para toda la práctica y desde hace ya un tiempo; no solo porque brinda mucha información sobre muchos materiales sino también porque es <strong>información confiable</strong>, por ende será fácil de encontrar las dos estructuras que escojamos y tendremos las mismas propiedades electrónicas y físicas (estructura de bandas, DOS, diaramas de fase, etc) que para la estructura de la perovskita inicial, y así podremos hacer las comparaciones respectivas entre estas propiedades.</p>
+</section>
+<hr class="docutils" />
+<section id="id11">
+<h4><strong>Item #2</strong><a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h4>
+<p>Use el DataFrame seleccionado y elija dos estructuras. Compare estas dos nuevas estructuras con
+su estructura inicial del punto 1). Contraste sus simetrías, geometría, diagramas de fase, estabilidad y
+configuración electrónica (band gap, densidad de estados – estructura de bandas), en el marco de la
+aplicación que usted y/o sus compañeros expusieron. En otras palabras, qué comportamiento tendrían
+estos dos nuevos materiales respecto al material inicial.</p>
+<p>Primero contrastemos sus <strong>simetrías, volúmenes, densidades y grupos espaciales</strong>. Para esto, traigamos las dos estructuras cristalinas de materials project. Las escogidas fueron la primera y la tercera, es decir:</p>
+<blockquote>
+<div><p><span class="math notranslate nohighlight">\(CaTiO_{3}\)</span></p>
+</div></blockquote>
+<blockquote>
+<div><p><span class="math notranslate nohighlight">\(CaTi_{2}O_{5}\)</span></p>
+</div></blockquote>
+<p>Esto es:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">first_struc</span> <span class="o">=</span> <span class="n">Structure</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="s2">&quot;CaTiO3.cif&quot;</span><span class="p">)</span>
+<span class="n">second_struc</span> <span class="o">=</span> <span class="n">Structure</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="s2">&quot;CaTi2O5.cif&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Visualizandolas</span>
+<span class="n">first_struc</span> <span class="c1">#CaTiO3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>If you see this text, the Crystal Toolkit Jupyter Lab 
+
+extension is not installed. You can install it by running 
+
+&quot;pip install crystaltoolkit-extension&quot; 
+
+from the same environment you run &quot;jupyter lab&quot;. 
+
+This only works in Jupyter Lab 3.x or above.
+
+
+Structure Summary
+Lattice
+    abc : 5.46279649 7.63635962 5.37204886
+ angles : 90.0 90.0 90.0
+ volume : 224.09973769300066
+      A : 5.46279649 0.0 3.344998117935948e-16
+      B : 1.2280202865998073e-15 7.63635962 4.675921682885549e-16
+      C : 0.0 0.0 5.37204886
+    pbc : True True True
+PeriodicSite: Ca0 (Ca2+) (0.2316, 5.727, 5.323) [0.0424, 0.75, 0.9909]
+PeriodicSite: Ca0 (Ca2+) (5.231, 1.909, 0.04871) [0.9576, 0.25, 0.009067]
+PeriodicSite: Ca0 (Ca2+) (2.5, 1.909, 2.637) [0.4576, 0.25, 0.4909]
+PeriodicSite: Ca0 (Ca2+) (2.963, 5.727, 2.735) [0.5424, 0.75, 0.5091]
+PeriodicSite: Ti1 (Ti4+) (0.0, 0.0, 2.686) [0.0, 0.0, 0.5]
+PeriodicSite: Ti1 (Ti4+) (2.731, 0.0, 1.672e-16) [0.5, 0.0, 0.0]
+PeriodicSite: Ti1 (Ti4+) (2.731, 3.818, 4.01e-16) [0.5, 0.5, 0.0]
+PeriodicSite: Ti1 (Ti4+) (6.14e-16, 3.818, 2.686) [0.0, 0.5, 0.5]
+PeriodicSite: O2 (O2-) (1.149, 0.3067, 1.127) [0.2104, 0.04016, 0.2097]
+PeriodicSite: O2 (O2-) (4.313, 7.33, 4.245) [0.7896, 0.9598, 0.7903]
+PeriodicSite: O2 (O2-) (1.582, 7.33, 3.813) [0.2896, 0.9598, 0.7097]
+PeriodicSite: O2 (O2-) (3.881, 0.3067, 1.559) [0.7104, 0.04016, 0.2903]
+PeriodicSite: O2 (O2-) (3.881, 3.512, 1.559) [0.7104, 0.4598, 0.2903]
+PeriodicSite: O2 (O2-) (1.582, 4.125, 3.813) [0.2896, 0.5402, 0.7097]
+PeriodicSite: O2 (O2-) (4.313, 4.125, 4.245) [0.7896, 0.5402, 0.7903]
+PeriodicSite: O2 (O2-) (1.149, 3.512, 1.127) [0.2104, 0.4598, 0.2097]
+PeriodicSite: O3 (O2-) (0.102, 1.909, 3.098) [0.01867, 0.25, 0.5768]
+PeriodicSite: O3 (O2-) (5.361, 5.727, 2.274) [0.9813, 0.75, 0.4232]
+PeriodicSite: O3 (O2-) (2.629, 5.727, 0.4125) [0.4813, 0.75, 0.07678]
+PeriodicSite: O3 (O2-) (2.833, 1.909, 4.96) [0.5187, 0.25, 0.9232]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">second_struc</span> <span class="c1">#CaTi2O5</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>If you see this text, the Crystal Toolkit Jupyter Lab 
+
+extension is not installed. You can install it by running 
+
+&quot;pip install crystaltoolkit-extension&quot; 
+
+from the same environment you run &quot;jupyter lab&quot;. 
+
+This only works in Jupyter Lab 3.x or above.
+
+
+Structure Summary
+Lattice
+    abc : 3.61696897 11.60996489 4.89801972
+ angles : 90.0 90.0 90.0
+ volume : 205.68196780875337
+      A : 3.61696897 0.0 2.2147547358628994e-16
+      B : 1.867024750155952e-15 11.60996489 7.109053170375827e-16
+      C : 0.0 0.0 4.89801972
+    pbc : True True True
+PeriodicSite: Ca0 (Ca2+) (9.335e-16, 5.805, 4.223) [0.0, 0.5, 0.8621]
+PeriodicSite: Ca0 (Ca2+) (1.808, 0.0, 0.6752) [0.5, 0.0, 0.1379]
+PeriodicSite: Ti1 (Ti4+) (2.842e-16, 1.767, 2.974) [0.0, 0.1522, 0.6072]
+PeriodicSite: Ti1 (Ti4+) (1.583e-15, 9.843, 2.974) [0.0, 0.8478, 0.6072]
+PeriodicSite: Ti1 (Ti4+) (1.808, 4.038, 1.924) [0.5, 0.3478, 0.3928]
+PeriodicSite: Ti1 (Ti4+) (1.808, 7.572, 1.924) [0.5, 0.6522, 0.3928]
+PeriodicSite: O2 (O2-) (2.301e-16, 1.431, 4.661) [0.0, 0.1232, 0.9516]
+PeriodicSite: O2 (O2-) (1.637e-15, 10.18, 4.661) [0.0, 0.8768, 0.9516]
+PeriodicSite: O2 (O2-) (1.808, 4.374, 0.2373) [0.5, 0.3768, 0.04844]
+PeriodicSite: O2 (O2-) (1.808, 7.236, 0.2373) [0.5, 0.6232, 0.04844]
+PeriodicSite: O3 (O2-) (6.08e-16, 3.781, 2.599) [0.0, 0.3257, 0.5307]
+PeriodicSite: O3 (O2-) (1.259e-15, 7.829, 2.599) [0.0, 0.6743, 0.5307]
+PeriodicSite: O3 (O2-) (1.808, 2.024, 2.299) [0.5, 0.1743, 0.4693]
+PeriodicSite: O3 (O2-) (1.808, 9.586, 2.299) [0.5, 0.8257, 0.4693]
+PeriodicSite: O4 (O2-) (0.0, 0.0, 2.266) [0.0, 0.0, 0.4627]
+PeriodicSite: O4 (O2-) (1.808, 5.805, 2.632) [0.5, 0.5, 0.5373]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Contrastamos simetrías:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Para CaTiO3 primera estructura:</span>
+<span class="n">simmetry_first</span> <span class="o">=</span> <span class="n">SpacegroupAnalyzer</span><span class="p">(</span><span class="n">first_struc</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Volumen de CaTiO3: </span><span class="si">{</span><span class="n">first_struc</span><span class="o">.</span><span class="n">volume</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Simetría de CaTiO3: </span><span class="si">{</span><span class="n">simmetry_first</span><span class="o">.</span><span class="n">get_crystal_system</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Densidad de CaTiO3: </span><span class="si">{</span><span class="n">first_struc</span><span class="o">.</span><span class="n">density</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Grupo espacial de CaTiO3: </span><span class="si">{</span><span class="n">first_struc</span><span class="o">.</span><span class="n">get_space_group_info</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Volumen de CaTiO3: 224.09973769300066
+Simetría de CaTiO3: orthorhombic
+Densidad de CaTiO3: 4.02925941391082 g cm^-3
+Grupo espacial de CaTiO3: (&#39;Pnma&#39;, 62)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Para CaTi2O5 segunda estructura:</span>
+<span class="n">simmetry_second</span> <span class="o">=</span> <span class="n">SpacegroupAnalyzer</span><span class="p">(</span><span class="n">second_struc</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Volumen de CaTi2O5: </span><span class="si">{</span><span class="n">second_struc</span><span class="o">.</span><span class="n">volume</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Simetría de CaTi2O5: </span><span class="si">{</span><span class="n">simmetry_second</span><span class="o">.</span><span class="n">get_crystal_system</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Densidad de CaTi2O5: </span><span class="si">{</span><span class="n">second_struc</span><span class="o">.</span><span class="n">density</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Grupo espacial de CaTi2O5: </span><span class="si">{</span><span class="n">second_struc</span><span class="o">.</span><span class="n">get_space_group_info</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Volumen de CaTi2O5: 205.68196780875337
+Simetría de CaTi2O5: orthorhombic
+Densidad de CaTi2O5: 3.4845959443278764 g cm^-3
+Grupo espacial de CaTi2O5: (&#39;Pmmn&#39;, 59)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Colocando todas las estructuras en una tabla:</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Estructuras</p></th>
+<th class="head text-center"><p>Densidad</p></th>
+<th class="head text-center"><p>Volumen</p></th>
+<th class="head text-center"><p>Simetría</p></th>
+<th class="head text-center"><p>Grupo Espacial</p></th>
+<th class="head text-center"><p>Archivo .cif</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>CaZrO3</p></td>
+<td class="text-center"><p>4.603084505750543 g cm^-3</p></td>
+<td class="text-center"><p>258.7265007863652</p></td>
+<td class="text-center"><p>Ortorrómbico</p></td>
+<td class="text-center"><p>(‘Pnma’, 62)</p></td>
+<td class="text-center"><p>CaZrO3.cif</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>CaTiO3</p></td>
+<td class="text-center"><p>4.02925941391082 g cm^-3</p></td>
+<td class="text-center"><p>224.09973769300066</p></td>
+<td class="text-center"><p>Ortorrómbico</p></td>
+<td class="text-center"><p>(‘Pnma’, 62)</p></td>
+<td class="text-center"><p>CaTiO3 .cif</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>CaTi2O5</p></td>
+<td class="text-center"><p>3.4845959443278764 g cm^-3</p></td>
+<td class="text-center"><p>205.68196780875337</p></td>
+<td class="text-center"><p>Ortorrómbico</p></td>
+<td class="text-center"><p>(‘Pmmn’, 59)</p></td>
+<td class="text-center"><p>CaTi2O5.cif</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+</tbody>
+</table>
+<p>Estas diferencias en densidad y volumen de celda pueden deberse a varias razones, como la diferencia en los tamaños atómicos, las masas atómicas, la disposición de los átomos y la estructura de enlace en los cristales. La diferencia en el grupo espacial también sugiere diferencias en la simetría interna de las estructuras cristalinas. Estos factores pueden influir en las propiedades físicas y químicas de cada uno de estos materiales. La simetría de las dos estructuras escogidas resultó ser la misma que la estructura inicial. La diferencia entre grupos espaciales con la tercera estructura puede deberse a que en ella, el Ti tiene dos átomos y en las otras tiene solo uno (en el caso de la primera, el Zr tiene solo uno) y esto hace afectar el grupo al que pertenecerá. Si imprimos la información cristalográfica de cada una de estas estructuras, tenemos que:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">first_struc</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Full Formula (Ca4 Ti4 O12)
+Reduced Formula: CaTiO3
+abc   :   5.462796   7.636360   5.372049
+angles:  90.000000  90.000000  90.000000
+pbc   :       True       True       True
+Sites (20)
+  #  SP           a         b         c
+---  ----  --------  --------  --------
+  0  Ca2+  0.042398  0.75      0.990933
+  1  Ca2+  0.957602  0.25      0.009067
+  2  Ca2+  0.457602  0.25      0.490933
+  3  Ca2+  0.542398  0.75      0.509067
+  4  Ti4+  0         0         0.5
+  5  Ti4+  0.5       0         0
+  6  Ti4+  0.5       0.5       0
+  7  Ti4+  0         0.5       0.5
+  8  O2-   0.210386  0.040159  0.209706
+  9  O2-   0.789614  0.959841  0.790294
+ 10  O2-   0.289614  0.959841  0.709706
+ 11  O2-   0.710386  0.040159  0.290294
+ 12  O2-   0.710386  0.459841  0.290294
+ 13  O2-   0.289614  0.540159  0.709706
+ 14  O2-   0.789614  0.540159  0.790294
+ 15  O2-   0.210386  0.459841  0.209706
+ 16  O2-   0.018672  0.25      0.576781
+ 17  O2-   0.981328  0.75      0.423219
+ 18  O2-   0.481328  0.75      0.076781
+ 19  O2-   0.518672  0.25      0.923219
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">second_struc</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Full Formula (Ca2 Ti4 O10)
+Reduced Formula: CaTi2O5
+abc   :   3.616969  11.609965   4.898020
+angles:  90.000000  90.000000  90.000000
+pbc   :       True       True       True
+Sites (16)
+  #  SP      a         b         c
+---  ----  ---  --------  --------
+  0  Ca2+  0    0.5       0.86214
+  1  Ca2+  0.5  0         0.13786
+  2  Ti4+  0    0.152205  0.607161
+  3  Ti4+  0    0.847795  0.607161
+  4  Ti4+  0.5  0.347795  0.392839
+  5  Ti4+  0.5  0.652205  0.392839
+  6  O2-   0    0.123245  0.951556
+  7  O2-   0    0.876755  0.951556
+  8  O2-   0.5  0.376755  0.048444
+  9  O2-   0.5  0.623245  0.048444
+ 10  O2-   0    0.325663  0.530679
+ 11  O2-   0    0.674337  0.530679
+ 12  O2-   0.5  0.174337  0.469321
+ 13  O2-   0.5  0.825663  0.469321
+ 14  O2-   0    0         0.46271
+ 15  O2-   0.5  0.5       0.53729
+</pre></div>
+</div>
+</div>
+</div>
+<p>Como vemos, la segunda estructura (<span class="math notranslate nohighlight">\(CaTi_{2}O_{3}\)</span>) tiene solamente dos Ca mientras que la primera (<span class="math notranslate nohighlight">\(CaTiO_{3}\)</span>) tiene cuatro, esto puede afectar significativamente el grupo espacial al que pertenecerá.</p>
+<p>Ahora, <strong>comparemos los diagramas de fase:</strong></p>
+<p><img alt="image.png" src="attachment:24398ad5-e6cc-4b0d-8253-312c0fd12075.png" /></p>
+<p>Como anteriormente entramos en el detalle de explicar cómo funcionan los diagramas de fase y qué significan los puntos de estabilidad y la energía por encima del casco, no se entrarán en muchos detalles sobre la explicación de los términos. Lo que podemos decir es que en las dos estructuras que escogimos con el pymatgen, existen muchos más puntos donde la energía por encima del casco es muy alta y esto hace que la especie en esos puntos, sea inestable. El diagrama de fase de las estructuras escogidas, es prácticamente el mismo, podemos ver que en la parte del diagrama donde coesxisten los elementos Ti y O2, existen muchas especies inestables. Existe un patrón común y es que en los puntos de estabilidad, también se presentan especies inestables, esto significa que estas especies se predice que pueden descomponerse en compuestos más estables.</p>
+<p>La perovskita que fue dada inicialmente tiene mucho menos de estos puntos donde la energía por encima del casco es tan alta que crea más especies inestables; esta conclusión se puede saber dado que Materials Project aclara características básicas de todos los materiales cuando se buscan en una tablita en la parte derecha. Para saber de qué datos se están hablando observemos un aimagen que corresponde a la información de la estructura original <span class="math notranslate nohighlight">\(CaZrO_{3}\)</span>. Esto es:</p>
+<p><img alt="image.png" src="attachment:f6bceb9a-d965-442e-97b9-593f56498409.png" /></p>
+<p>Acá vemos un dato que recibe el nombre de <strong>Energy Above Hull: <span class="math notranslate nohighlight">\(0.0 eV/atom\)</span></strong>. Es este numero el que determina la estabilidad del compuesto. El <span class="math notranslate nohighlight">\(CatiO_{3}\)</span> también es estable porque su energía por encima del casco es <span class="math notranslate nohighlight">\(0.0 eV/atom\)</span> que es lo que <strong>NO</strong> sucede con el compuesto <span class="math notranslate nohighlight">\(CaTi_{2}O_{5}\)</span>: su energía por encima del casco es <span class="math notranslate nohighlight">\(0.027 eV/atom\)</span> y por eso es completamente inestable y experimentalmente no se ha podido observar.</p>
+<hr class="docutils" />
+<p>Ahora, si comparamos sus <strong>estructuras de bandas y densidad de estados:</strong></p>
+<p>(Materials Project no muestra estructura de bandas ni densidad de estados para el compuesto <span class="math notranslate nohighlight">\(CaTi_{2}O_{5}\)</span> esto dado que no es una especie estable y por lo tanto hacer cálculos DFT para esta no tiene mucho sentido. Se trató de buscar literatura que hablara sobre este compuesto pero no se halló, por lo que se compararán las estructuras de bandas y densidad de estados de <span class="math notranslate nohighlight">\(CaZrO_{3}\)</span> y <span class="math notranslate nohighlight">\(CaTiO_{3}\)</span>)</p>
+<p>Observemos las imágenes:</p>
+<p><img alt="image.png" src="attachment:91304ffc-ed8c-424f-b7ed-aed10e43be34.png" /></p>
+<p>Dado que anteriormente habíamos analizado la estructura de bandas y la DOS del <span class="math notranslate nohighlight">\(CaZrO_{3}\)</span> y habíamos llegado a la conclusión de que era un aislante dado al valor de su band gap (<span class="math notranslate nohighlight">\(3.83\)</span> eV), es decir que no conduce tanto como un semiconductor o un conductor pero es capaz de conducir. Si vemos la estructura de bandas del <span class="math notranslate nohighlight">\(CaTiO_{3}\)</span>, su gap es más pequeño, está en un rango de aproximadamente <span class="math notranslate nohighlight">\(0\)</span> a <span class="math notranslate nohighlight">\(2.3\)</span> esto quiere decir, según lo visto en clase, que su naturaleza es <strong>semiconductora</strong> por lo que sus propiedades eléctricas sin dopajes ni heteroestructuras pueden ser más fuertes que las del <span class="math notranslate nohighlight">\(CaZrO_{3}\)</span>. Las implicaciones de un gap más pequeño es que los electrones podrán saltar más fácilmente de la banda de valencia a la banda conductora y viceversa, y de este modo sus propiedades optoelectrónicas pueden mejorar capacidades de almacenamiento y densidad de energías. Ahora, si se dopara como se ha hecho en algunas investigaciones, su rendimiento sería aún mejor de lo que ya es.</p>
+<p>Yendo un poco a las aplicaciones de las que se expusieron en clase, los semiconductores juegan el papel más importante en el funcionamiento de las <strong>celdas solares</strong>. Recordando un poco lo que se habló, este semiconductor guarda los electrones liberados que se dan cuando llegan los fotones al sistema. Un semiconductor tipo perovksita, que son los más usados para la fabricación de celdas solares, que permita tener una mayor capacidad de almacenamiento de estos electrones, puede ser una muy buena opción para que se guarde más energía de la que se almacena hoy día: la idea de las celdas solares es ir mejorando su capacidad de almacenamiento para que se pueda guardar más energía para el futuro y se puedan usar aún más las energías limpias en el mundo.</p>
+</section>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="markdown-notebooks.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Notebooks with MyST Markdown</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hecho-por-elizabeth-granda-1000900741"><em><strong>Hecho por Elizabeth Granda, 1000900741</strong></em></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solucion"><strong>Solución</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#punto-1"><strong>Punto #1:</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#item-1"><strong>Item #1</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#item-2"><strong>Item #2</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#item-3"><strong>Item #3</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#item-4"><strong>Item #4</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#item-5"><strong>Item #5</strong></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#punto-2"><strong>Punto #2</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><strong>Item #1</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><strong>Item #2</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3"><strong>Item #3</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4"><strong>Item #4</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5"><strong>Item #5</strong></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#punto-3"><strong>Punto #3</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6"><strong>Item #1</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7"><strong>Item #2</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id8"><strong>Item #3</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id9"><strong>Item #4</strong></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#punto-4"><strong>Punto #4</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id10"><strong>Item #1</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id11"><strong>Item #2</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
